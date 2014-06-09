@@ -1,5 +1,8 @@
 ## API
 
+The API is here in case you want to wrap this with your CI toolset. It should not be considered stable. 
+For example, I'll probably rename a bunch of these to make more sense.
+
 ```js
 var npmCheck = require('npm-check');
 

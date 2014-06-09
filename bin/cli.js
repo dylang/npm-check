@@ -10,6 +10,6 @@ process.title = pkgJson.name;
 npmCheck(cwd)
     .then(output)
     .catch(function(err){
-        console.log('ERROR', err.stack);
+        console.log('[npm-check]', err.stack || err);
     })
     .done()
