@@ -29,7 +29,7 @@
   "dependencies": {
     "chalk": "^0.4.0",
     "changelog": "^1.0.5",
-    "depcheck": "^0.3.0",
+    "depcheck": "^0.3.1",
     "giturl": "0.0.3",
     "lodash": "^2.4.1",
     "npm": "^1.4.10",
