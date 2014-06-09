@@ -11,5 +11,6 @@ npmCheck(cwd)
     .then(output)
     .catch(function(err){
         console.log('[npm-check]', err.stack || err);
+        process.exit(1);
     })
     .done()
