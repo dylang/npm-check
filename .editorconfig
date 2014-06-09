@@ -1,0 +1,16 @@
+# Get the plugin for your editor and your
+# tab settings will be set automatically.
+# http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with no newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = false
+
+# Indentation override for all JS under lib directory
+[*.js]
+indent_style = space
+indent_size = 4

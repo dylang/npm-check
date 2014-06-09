@@ -1,0 +1,53 @@
+{
+  "name": "npm-check",
+  "version": "0.0.1",
+  "description": "Check for outdated, incorrect, and unused dependencies.",
+  "main": "lib/npm-check.js",
+  "scripts": {
+    "test": "grunt test && bin/cli.js"
+  },
+  "bin": {
+    "npm-check": "bin/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dylang/npm-check.git"
+  },
+  "keywords": [
+    "npm",
+    "outdated",
+    "dependencies",
+    "unused",
+    "changelog"
+  ],
+  "author": "Dylan Greene",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dylang/npm-check/issues"
+  },
+  "homepage": "https://github.com/dylang/npm-check",
+  "dependencies": {
+    "chalk": "^0.4.0",
+    "changelog": "^1.0.5",
+    "depcheck": "^0.3.0",
+    "giturl": "0.0.3",
+    "lodash": "^2.4.1",
+    "npm": "^1.4.10",
+    "npm-registry-client": "^2.0.0",
+    "npmconf": "^1.0.1",
+    "q": "^1.0.1",
+    "semver": "^2.3.0",
+    "semver-diff": "^0.1.0",
+    "text-table": "^0.2.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-mocha-test": "^0.11.0",
+    "grunt-templates-dylang": "~0.1.0",
+    "load-grunt-tasks": "^0.4.0",
+    "time-grunt": "^0.3.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}

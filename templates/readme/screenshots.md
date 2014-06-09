@@ -1,0 +1,1 @@
+{%= image('npm-check', 'https://cloud.githubusercontent.com/assets/51505/3213203/c1cab104-ef84-11e3-9e5c-6e2bfdd1a558.png') %}
