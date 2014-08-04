@@ -30,15 +30,15 @@
   },
   "homepage": "https://github.com/dylang/npm-check",
   "dependencies": {
-    "chalk": "^0.5.1",
-    "depcheck": "^0.4.0",
+    "chalk": "^0.5",
+    "depcheck": "^0.4",
     "giturl": "0.0.3",
-    "lodash": "^2.4.1",
-    "npm-registry-client": "^3.0.0",
-    "npmconf": "^2.0.1",
-    "q": "^1.0.1",
-    "semver": "^2.3.0",
-    "semver-diff": "^0.1.0",
+    "lodash": "^2.4",
+    "npm-registry-client": "^3.0",
+    "npmconf": "^2.0",
+    "q": "^1.0",
+    "semver": "^3.0",
+    "semver-diff": "^1.0",
     "text-table": "^0.2.0"
   },
   "devDependencies": {
