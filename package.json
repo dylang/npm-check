@@ -31,20 +31,22 @@
   "homepage": "https://github.com/dylang/npm-check",
   "dependencies": {
     "chalk": "^0.5",
+    "commander": "^2.3.0",
     "depcheck": "^0.4",
     "giturl": "0.0.3",
+    "inquirer": "^0.8.0",
     "lodash": "^2.4",
     "npm-registry-client": "^3.0",
     "npmconf": "^2.0",
     "q": "^1.0",
     "semver": "^4.0",
-    "semver-diff": "^1.0",
+    "semver-diff": "^2.0.0",
     "text-table": "^0.2.0"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-mocha-test": "^0.12.0",
-    "grunt-templates-dylang": "~0.1.0",
+    "grunt-templates-dylang": "^1.0.0",
     "load-grunt-tasks": "^0.6.0",
     "mocha": "^1.21.4",
     "time-grunt": "^1.0.0"
