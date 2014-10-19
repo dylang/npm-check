@@ -30,10 +30,12 @@
   },
   "homepage": "https://github.com/dylang/npm-check",
   "dependencies": {
+    "buffered-spawn": "^1.0.0",
     "chalk": "^0.5",
     "commander": "^2.3.0",
     "depcheck": "^0.4",
     "giturl": "0.0.3",
+    "globby": "^0.1.1",
     "inquirer": "^0.8.0",
     "lodash": "^2.4",
     "npm-registry-client": "^3.0",
