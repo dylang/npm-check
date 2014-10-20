@@ -11,7 +11,7 @@
 
 
 
-### CLI
+### On the command line
 
 This is how you should use `npm-check`. 
 
@@ -204,5 +204,5 @@ Released under the [MIT license](https://tldrlegal.com/license/mit-license).
 Screenshots are [CC BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike).
 
 ***
-_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Sunday, October 19, 2014._ [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dylang/npm-check/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Google Analytics](https://ga-beacon.appspot.com/UA-4820261-3/dylang/npm-check)](https://github.com/igrigorik/ga-beacon)
+_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Monday, October 20, 2014._ [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dylang/npm-check/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Google Analytics](https://ga-beacon.appspot.com/UA-4820261-3/dylang/npm-check)](https://github.com/igrigorik/ga-beacon)
 
