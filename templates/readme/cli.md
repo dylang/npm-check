@@ -1,4 +1,4 @@
-## CLI
+## On the command line
 
 This is how you should use `npm-check`. 
 
