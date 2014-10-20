@@ -1,18 +1,49 @@
 ## API
 
-The API is here in case you want to wrap this with your CI toolset. It should not be considered stable. 
-For example, I'll probably rename a bunch of these to make more sense.
+The API is here in case you want to wrap this with your CI toolset.
 
 ```js
 var npmCheck = require('npm-check');
 
-npmCheck(path)
+npmCheck(options)
   .then(result);
 ```
 
-### `npmCheck(path)` returns `promise`
+### `npmCheck(options)` returns `promise`
 
-`result` looks like this:
+#### options
+
+##### global `boolean`
+
+* default is `false`
+
+Use the globally installed packages. When `true`, the `path` is automatically set.
+
+##### update `boolean`
+
+* default is `false`
+
+Interactive update.
+
+##### skipUnused `boolean`
+
+* default is `false`
+
+Skip checking for unused packages.
+
+##### ignoreDev `boolean`
+
+* default is `false`
+
+Ignore `devDependencies`.
+
+##### path `string`
+
+* default is `cwd`
+
+Override where `npm-check` checks.
+
+####`result`
 
 `object of module names : data`
 

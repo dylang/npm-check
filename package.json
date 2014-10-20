@@ -1,6 +1,6 @@
 {
   "name": "npm-check",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Check for outdated, incorrect, and unused dependencies.",
   "main": "lib/npm-check.js",
   "scripts": {
@@ -32,16 +32,17 @@
   "dependencies": {
     "buffered-spawn": "^1.0.0",
     "chalk": "^0.5",
-    "commander": "^2.3.0",
+    "commander": "^2.4.0",
     "depcheck": "^0.4",
     "giturl": "0.0.3",
     "globby": "^0.1.1",
     "inquirer": "^0.8.0",
     "lodash": "^2.4",
-    "npm-registry-client": "^3.0",
+    "npm-registry-client": "^3.2.4",
     "npmconf": "^2.0",
     "q": "^1.0",
-    "semver": "^4.0",
+    "registry-url": "^2.0.0",
+    "semver": "^4.1.0",
     "semver-diff": "^2.0.0",
     "text-table": "^0.2.0"
   },
