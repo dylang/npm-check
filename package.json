@@ -18,7 +18,17 @@
     "outdated",
     "dependencies",
     "unused",
-    "changelog"
+    "changelog",
+    "check",
+    "updates",
+    "api",
+    "interactive",
+    "cli",
+    "safe",
+    "updating",
+    "updater",
+    "installer",
+    "devDependencies"
   ],
   "author": {
     "name": "Dylan Greene",
