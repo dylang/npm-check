@@ -7,7 +7,8 @@
     "test": "grunt test && bin/cli.js"
   },
   "bin": {
-    "npm-check": "bin/cli.js"
+    "npm-check": "bin/cli.js",
+    "npmu": "bin/cli.js -u"
   },
   "repository": {
     "type": "git",
@@ -42,7 +43,7 @@
   "dependencies": {
     "buffered-spawn": "^1.0.0",
     "chalk": "^0.5",
-    "commander": "^2.4.0",
+    "commander": "^2.5.0",
     "depcheck": "^0.4",
     "giturl": "0.0.3",
     "globby": "^0.1.1",
@@ -59,9 +60,9 @@
   "devDependencies": {
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-mocha-test": "^0.12.0",
+    "grunt-release": "^0.7.0",
     "grunt-templates-dylang": "^1.0.0",
     "load-grunt-tasks": "^0.6.0",
-    "mocha": "^1.21.4",
     "time-grunt": "^1.0.0"
   },
   "engines": {
