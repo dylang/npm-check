@@ -7,8 +7,7 @@
     "test": "grunt test && bin/cli.js"
   },
   "bin": {
-    "npm-check": "bin/cli.js",
-    "npmu": "bin/cli.js -u"
+    "npm-check": "bin/cli.js"
   },
   "repository": {
     "type": "git",
