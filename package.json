@@ -48,7 +48,7 @@
     "globby": "^0.1.1",
     "inquirer": "^0.8.0",
     "lodash": "^2.4",
-    "npm-registry-client": "^3.2.4",
+    "npm-registry-client": "^4.0.1",
     "npmconf": "^2.0",
     "q": "^1.0",
     "registry-url": "^2.0.0",
