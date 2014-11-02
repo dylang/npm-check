@@ -61,7 +61,7 @@
     "grunt-mocha-test": "^0.12.0",
     "grunt-release": "^0.7.0",
     "grunt-templates-dylang": "^1.0.0",
-    "load-grunt-tasks": "^0.6.0",
+    "load-grunt-tasks": "^1.0.0",
     "time-grunt": "^1.0.0"
   },
   "engines": {
