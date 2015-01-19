@@ -2,7 +2,7 @@
   "name": "npm-check",
   "version": "3.2.6",
   "description": "Check for outdated, incorrect, and unused dependencies.",
-  "main": "lib/npm-check.js",
+  "main": "lib",
   "scripts": {
     "test": "grunt test && bin/cli.js"
   },
@@ -45,23 +45,24 @@
     "commander": "^2.5.0",
     "depcheck": "^0.4",
     "giturl": "0.0.3",
-    "globby": "^0.1.1",
+    "globby": "^1.1.0",
     "inquirer": "^0.8.0",
     "lodash": "^2.4",
-    "npm-registry-client": "^4.0.1",
+    "npm-registry-client": "^5.0.0",
     "npmconf": "^2.0",
     "q": "^1.0",
     "registry-url": "^2.0.0",
     "semver": "^4.1.0",
     "semver-diff": "^2.0.0",
-    "text-table": "^0.2.0"
+    "text-table": "^0.2.0",
+    "update-notifier": "^0.3.0"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-mocha-test": "^0.12.0",
-    "grunt-release": "^0.7.0",
+    "grunt-release": "^0.10.0",
     "grunt-templates-dylang": "^1.0.0",
-    "load-grunt-tasks": "^1.0.0",
+    "load-grunt-tasks": "^2.0.0",
     "time-grunt": "^1.0.0"
   },
   "engines": {
