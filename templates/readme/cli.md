@@ -36,9 +36,13 @@ $ npm-check --help
     -p, --production   Ignore devDependencies.
 ```
 
-#### -u, --update
+<img width="882" alt="npm-check" src="https://cloud.githubusercontent.com/assets/51505/9569919/99c2412a-4f48-11e5-8c65-e9b6530ee991.png">
+*With no options it will just list what can be updated.*
 
-![npm-check-u2](https://cloud.githubusercontent.com/assets/51505/4696185/7e9a62ae-57e8-11e4-8bdb-3bb74bb6877d.gif)
+
+![npm-check-u](https://cloud.githubusercontent.com/assets/51505/9569912/8c600cd8-4f48-11e5-8757-9387a7a21316.gif)
+
+#### -u, --update
 
 Show an interactive UI for choosing which modules to update.
 
@@ -47,6 +51,8 @@ Automatically updates versions referenced in the `package.json`.
 _Based on recommendations from the `npm` team, `npm-check` only updates using `npm install`, not `npm update`.
 To avoid using more than one version of `npm` in one directory, `npm-check` will automatically install updated modules
 using the version of `npm` installed globally._
+
+<img width="669" alt="npm-check -g -u" src="https://cloud.githubusercontent.com/assets/51505/9569921/9ca3aeb0-4f48-11e5-95ab-6fdb88124007.png">
 
 #### -g, --global
 
