@@ -147,9 +147,9 @@ Versions
 * devDependency: Is this a devDependency?
 * usedInScripts: Is this used in the scripts section of package.json?
 * mismatch: Is the version installed not match the range in package.json?
-* semver_validRange: Is the package.json range valid?
-* semver_valid: Is the installed version valid semver?
-* easy_upgrade: Will using npm install upgrade the module?
+* semverValidRange: Is the package.json range valid?
+* semverValid: Is the installed version valid semver?
+* easyUpgrade: Will using npm install upgrade the module?
 * bump: What kind of bump is required to get the latest, such as patch, minor, major.
 * unused: Is this module used in the code?
 
@@ -196,6 +196,6 @@ Released under the [MIT license](https://tldrlegal.com/license/mit-license).
 Screenshots are [CC BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike).
 
 ***
-_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Saturday, August 29, 2015._
+_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Sunday, August 30, 2015._
 _To make changes to this document look in `/templates/readme/`
 
