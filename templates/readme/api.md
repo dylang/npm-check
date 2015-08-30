@@ -62,8 +62,8 @@ Versions
 * devDependency: Is this a devDependency?
 * usedInScripts: Is this used in the scripts section of package.json?
 * mismatch: Is the version installed not match the range in package.json?
-* semver_validRange: Is the package.json range valid?
-* semver_valid: Is the installed version valid semver?
-* easy_upgrade: Will using npm install upgrade the module?
+* semverValidRange: Is the package.json range valid?
+* semverValid: Is the installed version valid semver?
+* easyUpgrade: Will using npm install upgrade the module?
 * bump: What kind of bump is required to get the latest, such as patch, minor, major.
 * unused: Is this module used in the code?

@@ -1,42 +1,26 @@
 'use strict';
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
+    require('time-grunt')(grunt);
 
-  require('time-grunt')(grunt);
+    grunt.initConfig({
+        mochaTest: {
+            notify: {
+                src: 'test/**/*.test.js',
+                options: {
+                    reporter: 'spec'
+                }
+            }
+        }
+    });
 
-  grunt.initConfig({
-    mochaTest: {
-      notify: {
-          src: 'test/**/*.test.js',
-          options: {
-              reporter: 'spec'
-          }
-      }
-    },
+    require('load-grunt-tasks')(grunt);
 
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        force: true
-      },
-      all: [
-        'Gruntfile.js',
-        'lib/**/*.js',
-        'tests/**/*'
-      ]
-    }
+    grunt.registerTask('test', [
+        'mochaTest'
+    ]);
 
-  });
-
-  require('load-grunt-tasks')(grunt);
-
-  grunt.registerTask('test', [
-    'jshint',
-    'mochaTest'
-  ]);
-
-  grunt.registerTask('default', [
-    'test'
-  ]);
-
+    grunt.registerTask('default', [
+        'test'
+    ]);
 };

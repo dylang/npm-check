@@ -6,6 +6,12 @@
   "scripts": {
     "test": "xo && grunt test && bin/cli.js"
   },
+  "xo": {
+    "space": 4,
+    "rules": {
+      "no-warning-comments": [0]
+    }
+  },
   "bin": {
     "npm-check": "bin/cli.js"
   },
