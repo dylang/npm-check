@@ -50,16 +50,16 @@
     "inquirer": "^0.9.0",
     "lodash": "^3.10.0",
     "mocha": "^2.2.5",
-    "npm-registry-client": "^7.0.1",
     "npmconf": "^2.1.2",
+    "package-json": "^1.2.0",
     "q": "^1.4.1",
-    "registry-url": "^3.0.3",
     "semver": "^5.0.1",
     "semver-diff": "^2.0.0",
     "text-table": "^0.2.0",
     "update-notifier": "^0.5.0"
   },
   "devDependencies": {
+    "grunt": "^0.4.0",
     "grunt-contrib-jshint": "^0.11.2",
     "grunt-mocha-test": "^0.12.7",
     "grunt-release": "^0.13.0",
