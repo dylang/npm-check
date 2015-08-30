@@ -16,6 +16,8 @@ $ npm install -g npm-check
 $ npm-check
 ```
 
+<img width="882" alt="npm-check" src="https://cloud.githubusercontent.com/assets/51505/9569919/99c2412a-4f48-11e5-8c65-e9b6530ee991.png">
+
 The result should look like the screenshot, or something nice when your packages are all up-to-date and in use.
 
 
@@ -35,9 +37,6 @@ $ npm-check --help
     -s, --skip-unused  Skip check for unused packages.
     -p, --production   Ignore devDependencies.
 ```
-
-<img width="882" alt="npm-check" src="https://cloud.githubusercontent.com/assets/51505/9569919/99c2412a-4f48-11e5-8c65-e9b6530ee991.png">
-*With no options it will just list what can be updated.*
 
 
 ![npm-check-u](https://cloud.githubusercontent.com/assets/51505/9569912/8c600cd8-4f48-11e5-8757-9387a7a21316.gif)
