@@ -1,8 +1,16 @@
 language: node_js
-node_js:
-  - '0.10'
-  - '0.11'
-  - '0.12'
-  - 'iojs'
-before_script:
-  - npm install -g grunt-cli
+matrix:
+  include:
+    - node_js: '0.10'
+      before_install: npm -g i npm@2
+    - node_js: '0.10'
+      before_install: npm -g i npm@3
+    - node_js: '0.12'
+      before_install: npm -g i npm@2
+    - node_js: '0.12'
+      before_install: npm -g i npm@3
+    - node_js: '4'
+      before_install: npm -g i npm@2
+    - node_js: '4'
+      before_install: npm -g i npm@3
+

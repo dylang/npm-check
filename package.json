@@ -56,7 +56,7 @@
     "giturl": "0.0.3",
     "global-modules": "^0.2.0",
     "globby": "^3.0.1",
-    "inquirer": "^0.9.0",
+    "inquirer": "^0.10.0",
     "lodash": "^3.10.0",
     "node-emoji": "^1.0.3",
     "package-json": "^1.2.0",
@@ -67,13 +67,14 @@
     "update-notifier": "^0.5.0"
   },
   "devDependencies": {
-    "mocha": "^2.3.0",
     "grunt": "^0.4.0",
+    "grunt-cli": "^0.1.13",
     "grunt-mocha-test": "^0.12.7",
     "grunt-release": "^0.13.0",
     "grunt-templates-dylang": "^1.0.9",
     "load-grunt-tasks": "^3.2.0",
+    "mocha": "^2.3.0",
     "time-grunt": "^1.2.1",
-    "xo": "^0.8.0"
+    "xo": "^0.9.0"
   }
 }
