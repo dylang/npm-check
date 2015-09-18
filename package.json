@@ -11,6 +11,9 @@
     "rules": {
       "no-warning-comments": [
         0
+      ],
+      "global-require": [
+        0
       ]
     }
   },
