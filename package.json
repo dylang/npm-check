@@ -53,6 +53,7 @@
   "dependencies": {
     "buffered-spawn": "^1.1.2",
     "chalk": "^1.1.0",
+    "cli-cursor": "^1.0.2",
     "commander": "^2.8.1",
     "depcheck": "^0.4.7",
     "figures": "^1.3.5",
