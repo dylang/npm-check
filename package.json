@@ -60,10 +60,10 @@
     "giturl": "0.0.3",
     "global-modules": "^0.2.0",
     "globby": "^3.0.1",
-    "inquirer": "^0.10.0",
+    "inquirer": "^0.10.1",
     "lodash": "^3.10.0",
     "node-emoji": "^1.0.3",
-    "package-json": "^1.2.0",
+    "package-json": "^2.0.0",
     "q": "^1.4.1",
     "semver": "^5.0.1",
     "semver-diff": "^2.0.0",
@@ -76,8 +76,8 @@
     "grunt-mocha-test": "^0.12.7",
     "grunt-release": "^0.13.0",
     "grunt-templates-dylang": "^1.0.9",
-    "load-grunt-tasks": "^3.2.0",
-    "mocha": "^2.3.0",
+    "load-grunt-tasks": "^3.3.0",
+    "mocha": "^2.3.3",
     "time-grunt": "^1.2.1",
     "xo": "^0.9.0"
   }
