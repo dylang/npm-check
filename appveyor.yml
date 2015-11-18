@@ -11,6 +11,8 @@ install:
 
 test_script:
   - node --version
-  - npm test
+  - node_modules\.bin\xo
+  - node_modules\.bin\grunt test
+  - node .\bin\cli.js
 
 build: off
