@@ -43,6 +43,12 @@ Ignore `devDependencies`.
 
 Override where `npm-check` checks.
 
+###### saveExact `boolean`
+ 
+* default is `false`
+
+Save exact versions to package.json
+
 ####`result`
 
 `object of module names : data`

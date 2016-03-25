@@ -24,18 +24,26 @@ The result should look like the screenshot, or something nice when your packages
 ### Options
 
 ```
-$ npm-check --help
+Usage
+  $ npm-check <path> <options>
+  
+Path
+  Where to check. Defaults to current directory. Use -g for checking global modules.
 
-  Usage: npm-check [options]
+Options
+  -u, --update          Interactive update.
+  -g, --global          Look at global modules.
+  -s, --skip-unused     Skip check for unused packages.
+  -p, --production      Skip devDependencies.
+  -E, --save-exact      Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.
+  --no-color            Force or disable color output.
+  --no-emoji            Remove emoji support. No emoji in default in CI environments.
+  --debug               Debug output. Throw in a gist when creating issues on github.
 
-  Options:
-
-    -h, --help         output usage information
-    -V, --version      output the version number
-    -u, --update       Interactive update.
-    -g, --global       Look at global modules.
-    -s, --skip-unused  Skip check for unused packages.
-    -p, --production   Ignore devDependencies.
+Examples
+  $ npm-check           # See what can be updated, what isn't being used.
+  $ npm-check ../foo    # Check another path.
+  $ npm-check -g -u     # Update globally installed modules by picking which ones to upgrade.
 ```
 
 
@@ -73,3 +81,19 @@ This is enabled by default when using `global` or `update`.
 By default `npm-check` will look at packages listed as `dependencies` and `devDependencies`.
 
 This option will let it ignore outdated and unused checks for packages listed as `devDependencies`.
+
+##### -E, --save-exact
+  
+Install packages using `--save-exact`, meaning exact versions will be saved in package.json.
+ 
+Applies to both `dependencies` and `devDependencies`.
+
+##### --color, --no-color
+  
+Enable or disable color support.
+
+By default `npm-check` uses colors if they are available.
+
+##### --emoji, --no-emoji
+  
+Enable or disable emoji support. Useful for terminals that don't support them. 
