@@ -35,7 +35,7 @@
 
 ### On the command line
 
-This is how you should use `npm-check`. 
+This is how you should use `npm-check`.
 
 #### Install
 
@@ -187,7 +187,7 @@ Versions
 * [npm outdated](https://www.npmjs.org/doc/cli/npm-outdated.html) - awkward output, requires --depth=0 to be grokable.
 * [david](https://github.com/alanshaw/david) - does not work with private registries.
 * [update-notifier](https://github.com/yeoman/update-notifier) - for single modules, not everything in package.json.
-* [depcheck](https://github.com/rumpl/depcheck) - only part of the puzzle. npm-check uses depcheck.
+* [depcheck](https://github.com/depcheck/depcheck) - only part of the puzzle. npm-check uses depcheck.
 
 
 
@@ -226,4 +226,3 @@ Screenshots are [CC BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) (Attr
 ***
 _Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Sunday, October 11, 2015._
 _To make changes to this document look in `/templates/readme/`
-

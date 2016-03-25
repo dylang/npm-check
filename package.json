@@ -55,7 +55,7 @@
     "chalk": "^1.1.0",
     "cli-cursor": "^1.0.2",
     "commander": "^2.9.0",
-    "depcheck": "^0.5.9",
+    "depcheck": "^0.6.1",
     "figures": "^1.4.0",
     "giturl": "^1.0.0",
     "global-modules": "^0.2.0",
