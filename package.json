@@ -65,7 +65,7 @@
     "node-emoji": "^1.0.3",
     "ora": "^0.2.0",
     "package-json": "^2.0.1",
-    "q": "^1.4.1",
+    "raw-body": "^2.1.6",
     "semver": "^5.0.1",
     "semver-diff": "^2.0.0",
     "text-table": "^0.2.0",
