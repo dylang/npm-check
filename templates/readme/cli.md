@@ -36,6 +36,7 @@ $ npm-check --help
     -g, --global       Look at global modules.
     -s, --skip-unused  Skip check for unused packages.
     -p, --production   Ignore devDependencies.
+    -E, --save-exact   Save exact versions.
 ```
 
 
@@ -73,3 +74,9 @@ This is enabled by default when using `global` or `update`.
 By default `npm-check` will look at packages listed as `dependencies` and `devDependencies`.
 
 This option will let it ignore outdated and unused checks for packages listed as `devDependencies`.
+
+##### -E, --save-exact
+  
+Install packages using `--save-exact`, meaning exact versions will be saved in package.json.
+ 
+Applies to both `dependencies` and `devDependencies`.
