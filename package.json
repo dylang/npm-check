@@ -58,7 +58,6 @@
     "chalk": "^1.1.0",
     "depcheck": "^0.6.1",
     "execa": "^0.2.2",
-    "figures": "^1.5.0",
     "giturl": "^1.0.0",
     "global-modules": "^0.2.0",
     "globby": "^4.0.0",
