@@ -24,19 +24,22 @@ The result should look like the screenshot, or something nice when your packages
 ### Options
 
 ```
-$ npm-check --help
+    Usage
+      $ npm-check <Options>
 
-  Usage: npm-check [options]
+    Options
+      -u, --update          Interactive update.
+      -g, --global          Look at global modules.
+      -s, --skip-unused     Skip check for unused packages.
+      -p, --production      Ignore devDependencies.
+      -d, --dir [path]      Directory to check, default is current directory.
+      -c, --color           Force color output.
+      -E, --save-exact      Save exact version instead of ^version.
+      --no-emoji            Remove flair. Necessary for some terminals and CI envs.
+      --debug               Debug output.
 
-  Options:
-
-    -h, --help         output usage information
-    -V, --version      output the version number
-    -u, --update       Interactive update.
-    -g, --global       Look at global modules.
-    -s, --skip-unused  Skip check for unused packages.
-    -p, --production   Ignore devDependencies.
-    -E, --save-exact   Save exact versions.
+    Examples
+      $ npm-check -g -u     # interactive update global deps
 ```
 
 
@@ -80,3 +83,13 @@ This option will let it ignore outdated and unused checks for packages listed as
 Install packages using `--save-exact`, meaning exact versions will be saved in package.json.
  
 Applies to both `dependencies` and `devDependencies`.
+
+##### --color, --no-color
+  
+Enable or disable color support.
+
+By default `npm-check` uses colors if they are available.
+
+##### --emoji, --no-emoji
+  
+Enable or disable emoji support. Useful for terminals that don't support them. 
