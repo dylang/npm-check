@@ -1,10 +1,12 @@
 {
   "name": "npm-check",
-  "version": "4.1.4",
+  "version": "5.0.0",
   "description": "Check for outdated, incorrect, and unused dependencies.",
   "main": "lib",
   "scripts": {
-    "test": "xo && bin/cli.js || true"
+    "test": "xo && bin/cli.js",
+    "repos": "grunt repos # required for grunt readme to run",
+    "readme": "grunt readme"
   },
   "xo": {
     "space": 4,
@@ -55,7 +57,6 @@
     "lib"
   ],
   "dependencies": {
-    "@dylang/scoped-test": "^1.0.1",
     "chalk": "^1.1.3",
     "depcheck": "^0.6.1",
     "execa": "^0.2.2",
@@ -64,7 +65,6 @@
     "globby": "^4.0.0",
     "inquirer": "^0.12.0",
     "lodash": "^4.6.1",
-    "loud-rejection": "^1.3.0",
     "meow": "^3.7.0",
     "merge-options": "0.0.64",
     "node-emoji": "^1.0.3",
@@ -73,19 +73,15 @@
     "path-exists": "^2.1.0",
     "semver": "^5.0.1",
     "semver-diff": "^2.0.0",
-    "supports-color": "^3.1.2",
     "text-table": "^0.2.0",
     "update-notifier": "^0.6.3"
   },
   "devDependencies": {
     "grunt": "^0.4.0",
-    "grunt-cli": "^0.1.13",
-    "grunt-mocha-test": "^0.12.7",
+    "grunt-cli": "^1.1.0",
     "grunt-release": "^0.13.0",
     "grunt-templates-dylang": "^1.0.9",
     "load-grunt-tasks": "^3.3.0",
-    "mocha": "^2.3.3",
-    "time-grunt": "^1.2.1",
     "xo": "^0.13.0"
   }
 }

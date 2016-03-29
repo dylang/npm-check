@@ -3,12 +3,8 @@ sudo: false
 language: node_js
 
 node_js:
-  - "0.12"
   - 4
   - 5
 
 script:
   - npm test
-
-before_deploy:
-  - npm run patch-version

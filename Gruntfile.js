@@ -1,26 +1,8 @@
 'use strict';
 
+// This is going away soon.
+// It is still used for the readme.
+// $ grunt repos && grunt readme
 module.exports = function (grunt) {
-    require('time-grunt')(grunt);
-
-    grunt.initConfig({
-        mochaTest: {
-            notify: {
-                src: 'test/**/*.test.js',
-                options: {
-                    reporter: 'spec'
-                }
-            }
-        }
-    });
-
     require('load-grunt-tasks')(grunt);
-
-    grunt.registerTask('test', [
-        'mochaTest'
-    ]);
-
-    grunt.registerTask('default', [
-        'test'
-    ]);
 };
