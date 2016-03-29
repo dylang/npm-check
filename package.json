@@ -4,7 +4,7 @@
   "description": "Check for outdated, incorrect, and unused dependencies.",
   "main": "lib",
   "scripts": {
-    "test": "xo && bin/cli.js"
+    "test": "xo && bin/cli.js || true"
   },
   "xo": {
     "space": 4,
@@ -55,7 +55,8 @@
     "lib"
   ],
   "dependencies": {
-    "chalk": "^1.1.0",
+    "@dylang/scoped-test": "^1.0.1",
+    "chalk": "^1.1.3",
     "depcheck": "^0.6.1",
     "execa": "^0.2.2",
     "giturl": "^1.0.0",
@@ -63,12 +64,13 @@
     "globby": "^4.0.0",
     "inquirer": "^0.12.0",
     "lodash": "^4.6.1",
+    "loud-rejection": "^1.3.0",
     "meow": "^3.7.0",
     "merge-options": "0.0.64",
     "node-emoji": "^1.0.3",
-    "npm": "^3.8.4",
-    "ora": "^0.2.0",
+    "ora": "^0.2.1",
     "package-json": "^2.0.1",
+    "path-exists": "^2.1.0",
     "semver": "^5.0.1",
     "semver-diff": "^2.0.0",
     "supports-color": "^3.1.2",
