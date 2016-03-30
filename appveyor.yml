@@ -1,18 +1,26 @@
 environment:
   matrix:
-  - nodejs_version: "0.12"
   - nodejs_version: 4
   - nodejs_version: 5
 
+
 install:
   - ps: Install-Product node $env:nodejs_version
-  - set PATH=%APPDATA%\npm;%PATH%
   - npm install
+  - set CI=true
 
 test_script:
   - node --version
-  - node_modules\.bin\xo
-  - node_modules\.bin\grunt test
-  - node .\bin\cli.js
+  - npm --version
+  - npm run lint
+  - node bin\cli.js
+
+cache:
+  - node_modules -> package.json
 
 build: off
+shallow_clone: true
+clone_depth: 1
+version: '{build}'
+matrix:
+  fast_finish: true
