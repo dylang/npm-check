@@ -1,6 +1,6 @@
 ## On the command line
 
-This is how you should use `npm-check`. 
+This is how you should use `npm-check`.
 
 ### Install
 
@@ -26,7 +26,7 @@ The result should look like the screenshot, or something nice when your packages
 ```
 Usage
   $ npm-check <path> <options>
-  
+
 Path
   Where to check. Defaults to current directory. Use -g for checking global modules.
 
@@ -83,17 +83,26 @@ By default `npm-check` will look at packages listed as `dependencies` and `devDe
 This option will let it ignore outdated and unused checks for packages listed as `devDependencies`.
 
 ##### -E, --save-exact
-  
+
 Install packages using `--save-exact`, meaning exact versions will be saved in package.json.
- 
+
 Applies to both `dependencies` and `devDependencies`.
 
 ##### --color, --no-color
-  
+
 Enable or disable color support.
 
 By default `npm-check` uses colors if they are available.
 
 ##### --emoji, --no-emoji
-  
-Enable or disable emoji support. Useful for terminals that don't support them. 
+
+Enable or disable emoji support. Useful for terminals that don't support them.
+
+##### use another npm installer
+
+if specify environment `NPM_CHECK_INSTALLER`, do the update by using the specified installer. (such as [ied](https://github.com/alexanderGugel/ied), [pnpm](https://github.com/rstacruz/pnpm))
+
+```bash
+NPM_CHECK_INSTALLER=pnpm npm-check -u
+# pnpm install --save-dev foo@version --color=always
+```
