@@ -1,6 +1,6 @@
 ## On the command line
 
-This is how you should use `npm-check`. 
+This is how you should use `npm-check`.
 
 ### Install
 
@@ -26,7 +26,7 @@ The result should look like the screenshot, or something nice when your packages
 ```
 Usage
   $ npm-check <path> <options>
-  
+
 Path
   Where to check. Defaults to current directory. Use -g for checking global modules.
 
@@ -36,6 +36,7 @@ Options
   -s, --skip-unused     Skip check for unused packages.
   -p, --production      Skip devDependencies.
   -E, --save-exact      Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.
+  -i, --installer <npm> Change npm installer. (eg 'pnpm', 'ied')
   --no-color            Force or disable color output.
   --no-emoji            Remove emoji support. No emoji in default in CI environments.
   --debug               Debug output. Throw in a gist when creating issues on github.
@@ -83,17 +84,21 @@ By default `npm-check` will look at packages listed as `dependencies` and `devDe
 This option will let it ignore outdated and unused checks for packages listed as `devDependencies`.
 
 ##### -E, --save-exact
-  
+
 Install packages using `--save-exact`, meaning exact versions will be saved in package.json.
- 
+
 Applies to both `dependencies` and `devDependencies`.
 
+##### -i, --installer <npm>
+
+Change the npm installer, do the update by using the specified installer. (such as [ied](https://github.com/alexanderGugel/ied), [pnpm](https://github.com/rstacruz/pnpm))
+
 ##### --color, --no-color
-  
+
 Enable or disable color support.
 
 By default `npm-check` uses colors if they are available.
 
 ##### --emoji, --no-emoji
-  
-Enable or disable emoji support. Useful for terminals that don't support them. 
+
+Enable or disable emoji support. Useful for terminals that don't support them.
