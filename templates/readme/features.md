@@ -11,4 +11,8 @@
 * Works the public registry, [private registries](https://www.npmjs.com/onsite), and [Sinopia](https://github.com/rlidwka/sinopia).
 * Avoids querying npm registries for packages with `private: true` in their package.json.
 * Emoji in a command-line app, because command-line apps can be fun too.
+* Works with `npm@2` and `npm@3`, as well as newer alternative installers like `ied` and `pnpm`.
 
+## Requirements
+
+* Node 4 or newer is required because the code uses ES6 features like `const` and `arrow functions`.
