@@ -174,7 +174,7 @@ Skip checking for unused packages.
 
 Ignore `devDependencies`.
 
-###### path `string`
+###### cwd `string`
 
 * default is `cwd`
 
