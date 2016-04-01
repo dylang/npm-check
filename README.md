@@ -210,7 +210,7 @@ You will probably want `currentState.get('packages')` to get an array of package
 Each item in the array will look like the following:
 
 
-```json
+```js
 {
   moduleName: 'lodash',                 // name of the module.
   homepage: 'https://lodash.com/',      // url to the home page.
