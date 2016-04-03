@@ -26,14 +26,14 @@
 * Supports public and private [@scoped/packages](https://docs.npmjs.com/getting-started/scoped-packages).
 * Supports ES6-style [`import from`](http://exploringjs.com/es6/ch_modules.html) syntax.
 * Upgrades your modules using your installed version of npm, including the new `npm@3`, so dependencies go where you expect them.
-* Works the public registry, [private registries](https://www.npmjs.com/onsite), and [Sinopia](https://github.com/rlidwka/sinopia).
-* Avoids querying npm registries for packages with `private: true` in their package.json.
+* Works with any public npm registry, [private registries](https://www.npmjs.com/onsite), and alternate registries like [Sinopia](https://github.com/rlidwka/sinopia).
+* Does not query registries for packages with `private: true` in their package.json.
 * Emoji in a command-line app, because command-line apps can be fun too.
 * Works with `npm@2` and `npm@3`, as well as newer alternative installers like `ied` and `pnpm`.
 
 ### Requirements
 
-* Node 4 or newer is required because the code uses ES6 features like `const` and `arrow functions`.
+* Node 4 or newer is required because the code uses ES2015 features like [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) and [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
 
 
@@ -81,7 +81,7 @@ Options
 Examples
   $ npm-check           # See what can be updated, what isn't being used.
   $ npm-check ../foo    # Check another path.
-  $ npm-check -g -u     # Update globally installed modules by picking which ones to upgrade.
+  $ npm-check -gu       # Update globally installed modules by picking which ones to upgrade.
 ```
 
 ![npm-check-u](https://cloud.githubusercontent.com/assets/51505/9569912/8c600cd8-4f48-11e5-8757-9387a7a21316.gif)
@@ -279,6 +279,6 @@ Released under the [MIT license](https://tldrlegal.com/license/mit-license).
 Screenshots are [CC BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike).
 
 ***
-_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Friday, April 1, 2016._
+_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Sunday, April 3, 2016._
 _To make changes to this document look in `/templates/readme/`
 
