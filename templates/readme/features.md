@@ -8,11 +8,11 @@
 * Supports public and private [@scoped/packages](https://docs.npmjs.com/getting-started/scoped-packages).
 * Supports ES6-style [`import from`](http://exploringjs.com/es6/ch_modules.html) syntax.
 * Upgrades your modules using your installed version of npm, including the new `npm@3`, so dependencies go where you expect them.
-* Works the public registry, [private registries](https://www.npmjs.com/onsite), and [Sinopia](https://github.com/rlidwka/sinopia).
-* Avoids querying npm registries for packages with `private: true` in their package.json.
+* Works with any public npm registry, [private registries](https://www.npmjs.com/onsite), and alternate registries like [Sinopia](https://github.com/rlidwka/sinopia).
+* Does not query registries for packages with `private: true` in their package.json.
 * Emoji in a command-line app, because command-line apps can be fun too.
 * Works with `npm@2` and `npm@3`, as well as newer alternative installers like `ied` and `pnpm`.
 
 ## Requirements
 
-* Node 4 or newer is required because the code uses ES6 features like `const` and `arrow functions`.
+* Node 4 or newer is required because the code uses ES2015 features like [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) and [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).

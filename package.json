@@ -3,6 +3,9 @@
   "version": "5.1.0",
   "description": "Check for outdated, incorrect, and unused dependencies.",
   "main": "lib",
+  "engines": {
+    "node": ">=4"
+  },
   "scripts": {
     "lint": "xo",
     "test": "xo && ./lib/cli.js",
