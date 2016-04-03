@@ -13,7 +13,7 @@ test_script:
   - node --version
   - npm --version
   - npm run lint
-  - node bin\cli.js
+  - node lib\cli.js
 
 cache:
   - node_modules -> package.json
