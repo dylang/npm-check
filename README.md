@@ -31,11 +31,6 @@
 * Emoji in a command-line app, because command-line apps can be fun too.
 * Works with `npm@2` and `npm@3`, as well as newer alternative installers like `ied` and `pnpm`.
 
-### Requirements
-
-* Node 4 or newer is required because the code uses ES6 features like `const` and `arrow functions`.
-
-
 
 ### On the command line
 
