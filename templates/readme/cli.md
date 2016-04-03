@@ -42,7 +42,7 @@ Options
 Examples
   $ npm-check           # See what can be updated, what isn't being used.
   $ npm-check ../foo    # Check another path.
-  $ npm-check -g -u     # Update globally installed modules by picking which ones to upgrade.
+  $ npm-check -gu       # Update globally installed modules by picking which ones to upgrade.
 ```
 
 ![npm-check-u](https://cloud.githubusercontent.com/assets/51505/9569912/8c600cd8-4f48-11e5-8757-9387a7a21316.gif)

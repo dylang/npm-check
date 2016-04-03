@@ -1,11 +1,11 @@
 {
   "name": "npm-check",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "description": "Check for outdated, incorrect, and unused dependencies.",
   "main": "lib",
   "scripts": {
     "lint": "xo",
-    "test": "xo && ./bin/cli.js",
+    "test": "xo && ./lib/cli.js",
     "repos": "grunt repos # required for grunt readme to run",
     "readme": "grunt readme"
   },
@@ -21,7 +21,7 @@
     }
   },
   "bin": {
-    "npm-check": "bin/cli.js"
+    "npm-check": "lib/cli.js"
   },
   "repository": {
     "type": "git",
@@ -54,11 +54,12 @@
   },
   "homepage": "https://github.com/dylang/npm-check",
   "files": [
-    "bin",
     "lib"
   ],
   "dependencies": {
+    "callsite-record": "^3.0.0",
     "chalk": "^1.1.3",
+    "co": "^4.6.0",
     "depcheck": "^0.6.3",
     "execa": "^0.2.2",
     "giturl": "^1.0.0",
