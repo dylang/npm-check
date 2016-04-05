@@ -3,7 +3,6 @@ environment:
   - nodejs_version: 4
   - nodejs_version: 5
 
-
 install:
   - ps: Install-Product node $env:nodejs_version
   - npm install
@@ -13,10 +12,7 @@ test_script:
   - node --version
   - npm --version
   - npm run lint
-  - node lib\cli.js
-
-cache:
-  - node_modules -> package.json
+  - node lib\cli.js || Exit code: %errorlevel%
 
 build: off
 shallow_clone: true
