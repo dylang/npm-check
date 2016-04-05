@@ -13,7 +13,8 @@ test_script:
   - node --version
   - npm --version
   - npm run lint
-  - "node lib\\cli.js || echo Exit code: %errorlevel% || ver > null"
+  - "node lib\\cli.js || ver > null"
+  - "echo Exit code: %errorlevel%"
 
 build: off
 shallow_clone: true
