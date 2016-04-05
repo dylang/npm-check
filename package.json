@@ -8,7 +8,7 @@
   },
   "scripts": {
     "lint": "xo",
-    "test": "xo && ./lib/cli.js",
+    "test": "xo && ./lib/cli.js || echo Exit Status: $?.",
     "repos": "grunt repos # required for grunt readme to run",
     "readme": "grunt readme"
   },
