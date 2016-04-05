@@ -5,7 +5,8 @@ environment:
 
 install:
   - ps: Install-Product node $env:nodejs_version
-  - npm install
+  - npm cache clean
+  - npm install --force
   - set CI=true
 
 test_script:
