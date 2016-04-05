@@ -5,15 +5,15 @@ environment:
 
 install:
   - ps: Install-Product node $env:nodejs_version
-  - npm cache clean
-  - npm install --force
+  - npm i -g npm@3
+  - npm install
   - set CI=true
 
 test_script:
   - node --version
   - npm --version
   - npm run lint
-  - "node lib\\cli.js || echo Exit code: %errorlevel%"
+  - "node lib\\cli.js || echo Exit code: %errorlevel% || ver > null"
 
 build: off
 shallow_clone: true
