@@ -8,7 +8,7 @@
   },
   "scripts": {
     "lint": "xo ./lib/*.js",
-    "test": "xo ./lib/*.js && ./lib/cli.js || echo Exit Status: $?.",
+    "test": "xo ./lib/*.js && ./bin/cli.js || echo Exit Status: $?.",
     "transpile": "babel lib --out-dir lib-es5",
     "prepublish": "npm run transpile",
     "repos": "grunt repos # required for grunt readme to run",
