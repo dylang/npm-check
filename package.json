@@ -4,11 +4,13 @@
   "description": "Check for outdated, incorrect, and unused dependencies.",
   "main": "lib",
   "engines": {
-    "node": ">=4"
+    "node": ">=0.11.0"
   },
   "scripts": {
-    "lint": "xo",
-    "test": "xo && ./lib/cli.js || echo Exit Status: $?.",
+    "lint": "xo ./lib/*.js",
+    "test": "xo ./lib/*.js && ./bin/cli.js || echo Exit Status: $?.",
+    "transpile": "babel lib --out-dir lib-es5",
+    "prepublish": "npm run transpile",
     "repos": "grunt repos # required for grunt readme to run",
     "readme": "grunt readme"
   },
@@ -20,11 +22,17 @@
       ],
       "global-require": [
         0
+      ],
+      "no-new-func": [
+        0
+      ],
+      "no-unused-expressions": [
+        0
       ]
     }
   },
   "bin": {
-    "npm-check": "lib/cli.js"
+    "npm-check": "bin/cli.js"
   },
   "repository": {
     "type": "git",
@@ -57,7 +65,8 @@
   },
   "homepage": "https://github.com/dylang/npm-check",
   "files": [
-    "lib"
+    "lib",
+    "lib-es5"
   ],
   "dependencies": {
     "callsite-record": "^3.0.0",
@@ -81,9 +90,13 @@
     "semver-diff": "^2.0.0",
     "text-table": "^0.2.0",
     "throat": "^2.0.2",
-    "update-notifier": "^0.6.3"
+    "update-notifier": "^0.6.3",
+    "babel-runtime": "^6.6.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-plugin-transform-runtime": "^6.6.0",
+    "babel-preset-es2015": "^6.6.0",
     "grunt": "^0.4.0",
     "grunt-cli": "^1.2.0",
     "grunt-release": "^0.13.0",

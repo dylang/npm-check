@@ -15,4 +15,4 @@
 
 ## Requirements
 
-* Node 4 or newer is required because the code uses ES2015 features like [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) and [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+* Node >= 0.11.
