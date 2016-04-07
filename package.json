@@ -22,12 +22,6 @@
       ],
       "global-require": [
         0
-      ],
-      "no-new-func": [
-        0
-      ],
-      "no-unused-expressions": [
-        0
       ]
     }
   },
@@ -69,6 +63,7 @@
     "lib-es5"
   ],
   "dependencies": {
+    "babel-runtime": "^6.6.1",
     "callsite-record": "^3.0.0",
     "chalk": "^1.1.3",
     "co": "^4.6.0",
@@ -90,8 +85,7 @@
     "semver-diff": "^2.0.0",
     "text-table": "^0.2.0",
     "throat": "^2.0.2",
-    "update-notifier": "^0.6.3",
-    "babel-runtime": "^6.6.1"
+    "update-notifier": "^0.6.3"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
