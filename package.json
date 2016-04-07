@@ -59,6 +59,7 @@
   },
   "homepage": "https://github.com/dylang/npm-check",
   "files": [
+    "bin",
     "lib",
     "lib-es5"
   ],
