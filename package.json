@@ -10,6 +10,7 @@
     "lint": "xo ./lib/*.js",
     "test": "xo ./lib/*.js && ./bin/cli.js || echo Exit Status: $?.",
     "transpile": "babel lib --out-dir lib-es5",
+    "watch": "babel lib --out-dir lib-es5 --watch",
     "prepublish": "npm run transpile",
     "repos": "grunt repos # required for grunt readme to run",
     "readme": "grunt readme"
