@@ -10,16 +10,16 @@
 
 * 告訴你哪些依賴模塊需要更新
 * 為每一個模塊提供更新的說明連接，來讓你能夠更好的決定是否需要更新它
-* 如果一個依賴模塊不再被使用了，它會在合適的時候提醒你。
+* 如果一個依賴模塊不再被使用了，它會在合適的時候提醒你
 * 通過在命令中添加`-g`參數來檢測全局所有已安裝的依賴模塊
-* 通過`-u`參數進入一個無需輸入命令行、也不會因為打錯字母而浪費時間的**交互更新**界面。
-* 支持公開的或私有的[@依賴模塊](https://docs.npmjs.com/getting-started/scoped-packages)。
+* 通過`-u`參數進入一個無需輸入命令行、也不會因為打錯字母而浪費時間的**交互更新**界面
+* 支持公開的或私有的[@依賴模塊](https://docs.npmjs.com/getting-started/scoped-packages)
 * 支持 ES6-style [`import from`](http://exploringjs.com/es6/ch_modules.html) 語法
-* 利用你當前版本的 npm 來更新所有模塊，包括更新 `npm` 自己，因此每個模塊都會被安裝到它們應當去的地方。
-* 支持所有的公開的 npm 模塊，私有模塊，以及像[Sinopia](https://github.com/rlidwka/sinopia)這樣的備份模塊。
-* 模塊中 `pakage.json` 文件含有 `private: true` 時（私有模塊），不會提示要求輸入任何註冊信息。
-* 在你的命令行裡顯示表情符號，因為命令行有時候也可以變的很有趣。
-* 支持 `npm@2` 以及 `npm@3`，同時也支持最新流行的安裝工具，像是 `ied` 和 `pnpm`。
+* 利用你當前版本的 npm 來更新所有模塊，包括更新 `npm` 自己，因此每個模塊都會被安裝到它們應當去的地方
+* 支持所有的公開的 npm 模塊，私有模塊，以及像[Sinopia](https://github.com/rlidwka/sinopia)這樣的備份模塊
+* 模塊中 `pakage.json` 文件含有 `private: true` 時（私有模塊），不會提示要求輸入任何註冊信息
+* 在你的命令行裡顯示表情符號，因為命令行有時候也可以變的很有趣
+* 支持 `npm@2` 以及 `npm@3`，同時也支持最新流行的安裝工具，像是 `ied` 和 `pnpm`
 
 ### 安裝環境
 
@@ -211,7 +211,7 @@ npmCheck(options)
 
 在命令行中添加 `--debug` 參數，你也能看到這些。
 
-### 製作 `nom-check` 的原因
+### 製作 `npm-check` 的原因
 
 * [npm outdated](https://www.npmjs.org/doc/cli/npm-outdated.html) - 奇怪的輸出，需要執行 `--depth=0` 選項才能進行交互。
 * [david](https://github.com/alanshaw/david) - 不支持私有模塊。

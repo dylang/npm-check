@@ -10,16 +10,16 @@
 
 * 告诉你哪些依赖模块需要更新
 * 为每一个模块提供更新的说明连接，来让你能够更好的决定是否需要更新它
-* 如果一个依赖模块不再被使用了，它会在合适的时候提醒你。
+* 如果一个依赖模块不再被使用了，它会在合适的时候提醒你
 * 通过在命令中添加`-g`参数来检测全局所有已安装的依赖模块
-* 通过`-u`参数进入一个无需输入命令行、也不会因为打错字母而浪费时间的**交互更新**界面。
-* 支持公开的或私有的[@依赖模块](https://docs.npmjs.com/getting-started/scoped-packages)。
+* 通过`-u`参数进入一个无需输入命令行、也不会因为打错字母而浪费时间的**交互更新**界面
+* 支持公开的或私有的[@依赖模块](https://docs.npmjs.com/getting-started/scoped-packages)
 * 支持 ES6-style [`import from`](http://exploringjs.com/es6/ch_modules.html) 语法
-* 利用你当前版本的 npm 来更新所有模块，包括更新 `npm` 自己，因此每个模块都会被安装到它们应当去的地方。
-* 支持所有的公开的 npm 模块，私有模块，以及像[Sinopia](https://github.com/rlidwka/sinopia)这样的备份模块。
+* 利用你当前版本的 npm 来更新所有模块，包括更新 `npm` 自己，因此每个模块都会被安装到它们应当去的地方
+* 支持所有的公开的 npm 模块，私有模块，以及像[Sinopia](https://github.com/rlidwka/sinopia)这样的备份模块
 * 模块中 `pakage.json` 文件含有 `private: true` 时（私有模块），不会提示要求输入任何注册信息。
-* 在你的命令行里显示表情符号，因为命令行有时候也可以变的很有趣。
-* 支持 `npm@2` 以及 `npm@3`，同时也支持最新流行的安装工具，像是 `ied` 和 `pnpm`。
+* 在你的命令行里显示表情符号，因为命令行有时候也可以变的很有趣
+* 支持 `npm@2` 以及 `npm@3`，同时也支持最新流行的安装工具，像是 `ied` 和 `pnpm`
 
 ### 安装环境
 
@@ -211,7 +211,7 @@ npmCheck(options)
 
 在命令行中添加 `--debug` 参数，你也能看到这些。
 
-### 制作 `nom-check` 的原因
+### 制作 `npm-check` 的原因
 
 * [npm outdated](https://www.npmjs.org/doc/cli/npm-outdated.html) - 奇怪的输出，需要执行 `--depth=0` 选项才能进行交互。
 * [david](https://github.com/alanshaw/david) - 不支持私有模块。
