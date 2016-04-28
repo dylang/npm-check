@@ -100,7 +100,7 @@ This option will let it ignore outdated and unused checks for packages listed as
 
 Ignore dependencies that match specified glob.
 
-`$ npm-check -i babel-*` will ignore all all dependencies starting with 'babel-'.
+`$ npm-check -i babel-*` will ignore all dependencies starting with 'babel-'.
 
 ### `-E, --save-exact`
 
