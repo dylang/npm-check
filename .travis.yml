@@ -1,3 +1,7 @@
+os:
+  - linux
+  - osx
+
 sudo: false
 
 language: node_js
@@ -5,7 +9,6 @@ language: node_js
 node_js:
   - 6
   - 4
-  - 5
   - 0.12
   - 0.11
 
