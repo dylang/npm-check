@@ -79,7 +79,7 @@
     "lodash": "^4.7.0",
     "meow": "^3.7.0",
     "merge-options": "0.0.64",
-    "minimatch": "^3.0.0",
+    "minimatch": "^3.0.2",
     "node-emoji": "^1.0.3",
     "ora": "^0.2.1",
     "package-json": "^2.0.1",
