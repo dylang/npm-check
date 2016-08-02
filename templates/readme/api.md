@@ -25,6 +25,11 @@ npmCheck(options)
 * Skip checking for unused packages.
 * default is `false`
 
+### `removeUnused`
+
+* Automatically remove all unused packages.
+* default is `false`
+
 ### `ignoreDev`
 
 * Ignore `devDependencies`.

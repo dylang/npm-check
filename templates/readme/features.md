@@ -3,6 +3,7 @@
 * Tells you what's out of date.
 * Provides a link to the package's documentation so you can decide if you want the update.
 * Kindly informs you if a dependency is not being used in your code.
+* Allows to automatically remove all unused dependencies via `--remove-unused` option.
 * Works on your globally installed packages too, via `-g`.
 * **Interactive Update** for less typing and fewer typos, via `-u`.
 * Supports public and private [@scoped/packages](https://docs.npmjs.com/getting-started/scoped-packages).
