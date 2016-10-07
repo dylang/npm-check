@@ -1,4 +1,4 @@
-## npm-check  [![Build Status](http://img.shields.io/travis/dylang/npm-check.svg)](https://travis-ci.org/dylang/npm-check) [![npm-check](http://img.shields.io/npm/dm/npm-check.svg)](https://www.npmjs.org/package/npm-check)
+## npm-check  [![Build Status](http://img.shields.io/travis/dylang/npm-check/master.svg)](https://travis-ci.org/dylang/npm-check) [![npm-check](http://img.shields.io/npm/dm/npm-check.svg)](https://www.npmjs.org/package/npm-check)
 
 > Check for outdated, incorrect, and unused dependencies.
 
