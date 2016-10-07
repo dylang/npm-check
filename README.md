@@ -1,20 +1,13 @@
-## npm-check  [![Build Status](http://img.shields.io/travis/dylang/npm-check/master.svg)](https://travis-ci.org/dylang/npm-check) [![npm-check](http://img.shields.io/npm/dm/npm-check.svg)](https://www.npmjs.org/package/npm-check)
+npm-check
+=========
+[![Build Status](https://travis-ci.org/dylang/npm-check.svg?branch=master)](https://travis-ci.org/dylang/npm-check)
+[![NPM version](https://badge.fury.io/js/npm-check.svg)](http://badge.fury.io/js/npm-check)
+[![Dependency Status](https://img.shields.io/david/dylang/npm-check.svg)](https://david-dm.org/dylang/npm-check)
+[![npm](https://img.shields.io/npm/dm/npm-check.svg?maxAge=2592000)]()
 
 > Check for outdated, incorrect, and unused dependencies.
 
-
-
 <img width="796" alt="npm-check -u" src="https://cloud.githubusercontent.com/assets/51505/9569917/96947fea-4f48-11e5-9783-2d78077256f2.png">
-
-
-
-
-
-
-
-
-
-
 
 ### Features
 
@@ -32,23 +25,18 @@
 * Works with `npm@2` and `npm@3`, as well as newer alternative installers like `ied` and `pnpm`.
 
 ### Requirements
-
 * Node >= 0.11.
-
-
 
 ### On the command line
 
 This is the easiest way to use `npm-check`.
 
 ### Install
-
 ```bash
 $ npm install -g npm-check
 ```
 
 ### Use
-
 ```bash
 $ npm-check
 ```
@@ -215,7 +203,6 @@ The result of the promise is a `currentState` object, look in [state.js](https:/
 You will probably want `currentState.get('packages')` to get an array of packages and the state of each of them.
 
 Each item in the array will look like the following:
-
 
 ```js
 {
