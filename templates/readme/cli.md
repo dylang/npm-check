@@ -34,6 +34,7 @@ Options
   -g, --global          Look at global modules.
   -s, --skip-unused     Skip check for unused packages.
   -p, --production      Skip devDependencies.
+  -i, --ignore          Ignore dependencies based on succeeding glob.
   -E, --save-exact      Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.
   --no-color            Force or disable color output.
   --no-emoji            Remove emoji support. No emoji in default in CI environments.
@@ -95,6 +96,12 @@ By default `npm-check` will look at packages listed as `dependencies` and `devDe
 
 This option will let it ignore outdated and unused checks for packages listed as `devDependencies`.
 
+#### `-i, --ignore`
+
+Ignore dependencies that match specified glob.
+
+`$ npm-check -i babel-*` will ignore all dependencies starting with 'babel-'.
+
 ### `-E, --save-exact`
 
 Install packages using `--save-exact`, meaning exact versions will be saved in package.json.
@@ -114,4 +121,3 @@ Enable or disable emoji support. Useful for terminals that don't support them. A
 ### `--spinner, --no-spinner`
 
 Enable or disable the spinner. Useful for terminals that don't support them. Automatically disabled in CI servers.
-

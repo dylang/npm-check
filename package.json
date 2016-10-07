@@ -10,6 +10,7 @@
     "lint": "xo ./lib/*.js",
     "test": "xo ./lib/*.js && ./bin/cli.js || echo Exit Status: $?.",
     "transpile": "babel lib --out-dir lib-es5",
+    "watch": "babel lib --out-dir lib-es5 --watch",
     "prepublish": "npm run transpile",
     "repos": "grunt repos # required for grunt readme to run",
     "readme": "grunt readme"
@@ -78,6 +79,7 @@
     "lodash": "^4.7.0",
     "meow": "^3.7.0",
     "merge-options": "0.0.64",
+    "minimatch": "^3.0.2",
     "node-emoji": "^1.0.3",
     "ora": "^0.2.1",
     "package-json": "^2.0.1",

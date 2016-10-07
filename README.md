@@ -73,6 +73,7 @@ Options
   -g, --global          Look at global modules.
   -s, --skip-unused     Skip check for unused packages.
   -p, --production      Skip devDependencies.
+  -i, --ignore          Ignore dependencies based on succeeding glob.
   -E, --save-exact      Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.
   --no-color            Force or disable color output.
   --no-emoji            Remove emoji support. No emoji in default in CI environments.
@@ -133,6 +134,12 @@ This is enabled by default when using `global` or `update`.
 By default `npm-check` will look at packages listed as `dependencies` and `devDependencies`.
 
 This option will let it ignore outdated and unused checks for packages listed as `devDependencies`.
+
+#### `-i, --ignore`
+
+Ignore dependencies that match specified glob.
+
+`$ npm-check -i babel-*` will ignore all dependencies starting with 'babel-'.
 
 #### `-E, --save-exact`
 
