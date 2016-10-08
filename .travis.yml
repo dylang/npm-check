@@ -1,17 +1,13 @@
-os:
-  - linux
-  - osx
-
 sudo: false
 
 language: node_js
 
+os:
+  - linux
+  - osx
+
 node_js:
   - 6
   - 4
-  - 0.12
-  - 0.11
-
-
-script:
-  - npm test
+  - '0.12'
+  - '0.11'
