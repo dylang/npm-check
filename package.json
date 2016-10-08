@@ -8,7 +8,7 @@
   },
   "scripts": {
     "lint": "xo ./lib/*.js",
-    "test": "xo ./lib/*.js && ./bin/cli.js || echo Exit Status: $?.",
+    "test": "npm run lint && ./bin/cli.js || echo Exit Status: $?.",
     "transpile": "babel lib --out-dir lib-es5",
     "watch": "babel lib --out-dir lib-es5 --watch",
     "prepublish": "npm run transpile",
