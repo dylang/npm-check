@@ -19,7 +19,7 @@ npm-check
 * Supports public and private [@scoped/packages](https://docs.npmjs.com/getting-started/scoped-packages).
 * Supports ES6-style [`import from`](http://exploringjs.com/es6/ch_modules.html) syntax.
 * Upgrades your modules using your installed version of npm, including the new `npm@3`, so dependencies go where you expect them.
-* Works with any public npm registry, [private registries](https://www.npmjs.com/onsite), and alternate registries like [Sinopia](https://github.com/rlidwka/sinopia).
+* Works with any public npm registry, [private registries](https://www.npmjs.com/enterprise), and alternate registries like [Sinopia](https://github.com/rlidwka/sinopia).
 * Does not query registries for packages with `private: true` in their package.json.
 * Emoji in a command-line app, because command-line apps can be fun too.
 * Works with `npm@2` and `npm@3`, as well as newer alternative installers like `ied` and `pnpm`.
@@ -232,10 +232,10 @@ You will also see this if you use `--debug` on the command line.
 
 ### Inspiration
 
-* [npm outdated](https://www.npmjs.org/doc/cli/npm-outdated.html) - awkward output, requires --depth=0 to be grokable.
+* [npm outdated](https://www.npmjs.com/doc/cli/npm-outdated.html) - awkward output, requires --depth=0 to be grokable.
 * [david](https://github.com/alanshaw/david) - does not work with private registries.
 * [update-notifier](https://github.com/yeoman/update-notifier) - for single modules, not everything in package.json.
-* [depcheck](https://github.com/rumpl/depcheck) - only part of the puzzle. npm-check uses depcheck.
+* [depcheck](https://github.com/depcheck/depcheck) - only part of the puzzle. npm-check uses depcheck.
 
 
 
@@ -244,7 +244,7 @@ You will also see this if you use `--debug` on the command line.
 ### About the Author
 
 Hi! Thanks for checking out this project! My name is **Dylan Greene**. When not overwhelmed with my two young kids I enjoy contributing
-to the open source community. I'm also a tech lead at [Opower](http://opower.com). [![@dylang](https://img.shields.io/badge/github-dylang-green.svg)](https://github.com/dylang) [![@dylang](https://img.shields.io/badge/twitter-dylang-blue.svg)](https://twitter.com/dylang)
+to the open source community. I'm also a tech lead at [Opower](https://opower.com/). [![@dylang](https://img.shields.io/badge/github-dylang-green.svg)](https://github.com/dylang) [![@dylang](https://img.shields.io/badge/twitter-dylang-blue.svg)](https://twitter.com/dylang)
 
 Here's some of my other Node projects:
 
@@ -270,9 +270,9 @@ Copyright (c) 2016 Dylan Greene, contributors.
 
 Released under the [MIT license](https://tldrlegal.com/license/mit-license).
 
-Screenshots are [CC BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike).
+Screenshots are [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike).
 
 ***
-_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Thursday, April 7, 2016._
+_Generated using [grunt-readme](https://github.com/jonschlinkert/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Thursday, April 7, 2016._
 _To make changes to this document look in `/templates/readme/`
 
