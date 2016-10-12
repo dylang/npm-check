@@ -1,6 +1,6 @@
 {
   "name": "npm-check",
-  "version": "5.2.3",
+  "version": "5.4.0",
   "description": "Check for outdated, incorrect, and unused dependencies.",
   "main": "lib",
   "engines": {
@@ -8,8 +8,9 @@
   },
   "scripts": {
     "lint": "xo ./lib/*.js",
-    "test": "xo ./lib/*.js && ./bin/cli.js || echo Exit Status: $?.",
+    "test": "npm run lint && ./bin/cli.js || echo Exit Status: $?.",
     "transpile": "babel lib --out-dir lib-es5",
+    "watch": "babel lib --out-dir lib-es5 --watch",
     "prepublish": "npm run transpile",
     "repos": "grunt repos # required for grunt readme to run",
     "readme": "grunt readme"
@@ -78,10 +79,12 @@
     "lodash": "^4.7.0",
     "meow": "^3.7.0",
     "merge-options": "0.0.64",
+    "minimatch": "^3.0.2",
     "node-emoji": "^1.0.3",
     "ora": "^0.2.1",
     "package-json": "^2.0.1",
     "path-exists": "^2.1.0",
+    "pkg-dir": "^1.0.0",
     "semver": "^5.0.1",
     "semver-diff": "^2.0.0",
     "text-table": "^0.2.0",

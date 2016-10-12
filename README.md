@@ -1,20 +1,13 @@
-## npm-check  [![Build Status](http://img.shields.io/travis/dylang/npm-check.svg)](https://travis-ci.org/dylang/npm-check) [![npm-check](http://img.shields.io/npm/dm/npm-check.svg)](https://www.npmjs.org/package/npm-check)
+npm-check
+=========
+[![Build Status](https://travis-ci.org/dylang/npm-check.svg?branch=master)](https://travis-ci.org/dylang/npm-check)
+[![NPM version](https://badge.fury.io/js/npm-check.svg)](http://badge.fury.io/js/npm-check)
+[![Dependency Status](https://img.shields.io/david/dylang/npm-check.svg)](https://david-dm.org/dylang/npm-check)
+[![npm](https://img.shields.io/npm/dm/npm-check.svg?maxAge=2592000)]()
 
 > Check for outdated, incorrect, and unused dependencies.
 
-
-
 <img width="796" alt="npm-check -u" src="https://cloud.githubusercontent.com/assets/51505/9569917/96947fea-4f48-11e5-9783-2d78077256f2.png">
-
-
-
-
-
-
-
-
-
-
 
 ### Features
 
@@ -26,29 +19,24 @@
 * Supports public and private [@scoped/packages](https://docs.npmjs.com/getting-started/scoped-packages).
 * Supports ES6-style [`import from`](http://exploringjs.com/es6/ch_modules.html) syntax.
 * Upgrades your modules using your installed version of npm, including the new `npm@3`, so dependencies go where you expect them.
-* Works with any public npm registry, [private registries](https://www.npmjs.com/onsite), and alternate registries like [Sinopia](https://github.com/rlidwka/sinopia).
+* Works with any public npm registry, [private registries](https://www.npmjs.com/enterprise), and alternate registries like [Sinopia](https://github.com/rlidwka/sinopia).
 * Does not query registries for packages with `private: true` in their package.json.
 * Emoji in a command-line app, because command-line apps can be fun too.
 * Works with `npm@2` and `npm@3`, as well as newer alternative installers like `ied` and `pnpm`.
 
 ### Requirements
-
 * Node >= 0.11.
-
-
 
 ### On the command line
 
 This is the easiest way to use `npm-check`.
 
 ### Install
-
 ```bash
 $ npm install -g npm-check
 ```
 
 ### Use
-
 ```bash
 $ npm-check
 ```
@@ -73,6 +61,7 @@ Options
   -g, --global          Look at global modules.
   -s, --skip-unused     Skip check for unused packages.
   -p, --production      Skip devDependencies.
+  -i, --ignore          Ignore dependencies based on succeeding glob.
   -E, --save-exact      Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.
   --no-color            Force or disable color output.
   --no-emoji            Remove emoji support. No emoji in default in CI environments.
@@ -133,6 +122,12 @@ This is enabled by default when using `global` or `update`.
 By default `npm-check` will look at packages listed as `dependencies` and `devDependencies`.
 
 This option will let it ignore outdated and unused checks for packages listed as `devDependencies`.
+
+#### `-i, --ignore`
+
+Ignore dependencies that match specified glob.
+
+`$ npm-check -i babel-*` will ignore all dependencies starting with 'babel-'.
 
 #### `-E, --save-exact`
 
@@ -209,7 +204,6 @@ You will probably want `currentState.get('packages')` to get an array of package
 
 Each item in the array will look like the following:
 
-
 ```js
 {
   moduleName: 'lodash',                 // name of the module.
@@ -238,10 +232,10 @@ You will also see this if you use `--debug` on the command line.
 
 ### Inspiration
 
-* [npm outdated](https://www.npmjs.org/doc/cli/npm-outdated.html) - awkward output, requires --depth=0 to be grokable.
+* [npm outdated](https://www.npmjs.com/doc/cli/npm-outdated.html) - awkward output, requires --depth=0 to be grokable.
 * [david](https://github.com/alanshaw/david) - does not work with private registries.
 * [update-notifier](https://github.com/yeoman/update-notifier) - for single modules, not everything in package.json.
-* [depcheck](https://github.com/rumpl/depcheck) - only part of the puzzle. npm-check uses depcheck.
+* [depcheck](https://github.com/depcheck/depcheck) - only part of the puzzle. npm-check uses depcheck.
 
 
 
@@ -250,7 +244,7 @@ You will also see this if you use `--debug` on the command line.
 ### About the Author
 
 Hi! Thanks for checking out this project! My name is **Dylan Greene**. When not overwhelmed with my two young kids I enjoy contributing
-to the open source community. I'm also a tech lead at [Opower](http://opower.com). [![@dylang](https://img.shields.io/badge/github-dylang-green.svg)](https://github.com/dylang) [![@dylang](https://img.shields.io/badge/twitter-dylang-blue.svg)](https://twitter.com/dylang)
+to the open source community. I'm also a tech lead at [Opower](https://opower.com/). [![@dylang](https://img.shields.io/badge/github-dylang-green.svg)](https://github.com/dylang) [![@dylang](https://img.shields.io/badge/twitter-dylang-blue.svg)](https://twitter.com/dylang)
 
 Here's some of my other Node projects:
 
@@ -276,9 +270,9 @@ Copyright (c) 2016 Dylan Greene, contributors.
 
 Released under the [MIT license](https://tldrlegal.com/license/mit-license).
 
-Screenshots are [CC BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike).
+Screenshots are [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike).
 
 ***
-_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Thursday, April 7, 2016._
+_Generated using [grunt-readme](https://github.com/jonschlinkert/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Thursday, April 7, 2016._
 _To make changes to this document look in `/templates/readme/`
 
