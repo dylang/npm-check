@@ -9,7 +9,7 @@ function skipUnused(currentState) {
     !currentState.get('cwdPackageJson').name; // there's no package.json
 }
 
-function checkUnused(currentState) {
+export default function checkUnused(currentState) {
   const spinner = ora(
     "Checking for unused packages. --skip-unused if you don't want this.",
   );
@@ -47,7 +47,8 @@ function checkUnused(currentState) {
     };
 
     depcheck(currentState.get('cwd'), depCheckOptions, resolve);
-  }).then((depCheckResults) => {
+  })
+  .then((depCheckResults) => {
     spinner.stop();
     const unusedDependencies = [].concat(
       depCheckResults.dependencies,
@@ -67,5 +68,3 @@ function checkUnused(currentState) {
     return currentState;
   });
 }
-
-export default checkUnused;

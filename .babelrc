@@ -1,4 +1,7 @@
 {
-  "presets": ["es2017"],
-  "plugins": ["transform-runtime"]
+  "presets": [
+    ["env", { "targets": { "node": 0.10 }, "useBuiltIns": true }],
+    "stage-0"
+  ],
+  "plugins": ["add-module-exports", "transform-runtime"]
 }

@@ -9,11 +9,9 @@
   "scripts": {
     "lint": "eslint --cache --format=node_modules/eslint-formatter-pretty .",
     "test": "npm run lint && ./bin/cli.js || echo Exit Status: $?.",
-    "build": "babel src --out-dir lib-es5",
-    "watch": "babel src --out-dir lib-es5 --watch",
-    "prepublish": "npm run build",
-    "repos": "grunt repos # required for grunt readme to run",
-    "readme": "grunt readme"
+    "build": "cross-env NODE_ENV=production rm -rf lib && babel src --out-dir lib",
+    "watch": "babel src --out-dir lib --watch",
+    "prepublish": "npm run build"
   },
   "bin": {
     "npm-check": "bin/cli.js"
@@ -50,8 +48,7 @@
   "homepage": "https://github.com/dylang/npm-check",
   "files": [
     "bin",
-    "lib",
-    "lib-es5"
+    "lib"
   ],
   "dependencies": {
     "babel-runtime": "^6.22.0",
@@ -82,16 +79,19 @@
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-env": "^1.1.8",
     "babel-preset-es2017": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "cross-env": "^3.1.4",
     "eslint": "^3.14.0",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-formatter-pretty": "^1.1.0",
     "eslint-plugin-import": "^2.2.0",
-    "grunt": "^1.0.1",
-    "grunt-cli": "^1.2.0",
-    "grunt-release": "^0.14.0",
-    "grunt-templates-dylang": "^1.0.12",
-    "load-grunt-tasks": "^3.5.2"
+    "jest-cli": "^18.1.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }

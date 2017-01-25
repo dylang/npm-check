@@ -142,7 +142,8 @@ function interactive(currentState) {
 
   return new Promise(
     resolve => inquirer.prompt(questions, resolve),
-  ).then((answers) => {
+  )
+  .then((answers) => {
     const packagesToUpdate = answers.packages;
 
     if (!packagesToUpdate || !packagesToUpdate.length) {
