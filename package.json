@@ -7,11 +7,14 @@
     "node": ">=0.11.0"
   },
   "scripts": {
-    "lint": "eslint --cache --format=node_modules/eslint-formatter-pretty .",
-    "test": "npm run lint && ./bin/cli.js || echo Exit Status: $?.",
     "build": "cross-env NODE_ENV=production rm -rf lib && babel src --out-dir lib",
-    "watch": "babel src --out-dir lib --watch",
-    "prepublish": "npm run build"
+    "flow": "flow check",
+    "flow-typed": "flow-typed install",
+    "lint": "eslint --cache --format=node_modules/eslint-formatter-pretty .",
+    "spec": "jest",
+    "test": "npm run lint && npm run flow && npm run spec",
+    "version": "npm run build",
+    "watch": "babel src --out-dir lib --watch"
   },
   "bin": {
     "npm-check": "bin/cli.js"
@@ -89,6 +92,8 @@
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-formatter-pretty": "^1.1.0",
     "eslint-plugin-import": "^2.2.0",
+    "flow-bin": "^0.38.0",
+    "flow-typed": "^2.0.0",
     "jest-cli": "^18.1.0"
   },
   "jest": {
