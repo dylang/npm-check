@@ -1,8 +1,4 @@
 {
-  "presets": [
-    "es2015"
-  ],
-  "plugins": [
-    "transform-runtime"
-  ]
+  "presets": ["es2017"],
+  "plugins": ["transform-runtime"]
 }

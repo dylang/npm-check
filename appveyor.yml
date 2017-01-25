@@ -1,26 +1,28 @@
 environment:
   matrix:
-  - nodejs_version: 6
-  - nodejs_version: 4
-  - nodejs_version: 0.12
-  - nodejs_version: 0.11
-
-install:
-  - ps: Install-Product node $env:nodejs_version
-  - npm i -g npm@3
-  - npm install
-  - set CI=true
+    - nodejs_version: 7
+    - nodejs_version: 6
 
 test_script:
   - node --version
-  - npm --version
-  - npm run lint
-  - "node lib\\cli.js || ver > null"
-  - "echo Exit code: %errorlevel%"
+  - yarn --version
+  - yarn test
 
-build: off
-shallow_clone: true
-clone_depth: 1
-version: '{build}'
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - set CI=true
+  - yarn
+
+cache:
+  - "%LOCALAPPDATA%/Yarn"
+
 matrix:
   fast_finish: true
+
+build: off
+
+version: '{build}'
+
+shallow_clone: true
+
+clone_depth: 1
