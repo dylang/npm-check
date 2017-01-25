@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import globby from 'globby';
-import readPackageJson from './read-package-json';
 import path from 'path';
+import readPackageJson from './read-package-json';
 
 export default function (cwd) {
   const GLOBBY_PACKAGE_JSON = '{*/package.json,@*/*/package.json}';
@@ -10,5 +10,7 @@ export default function (cwd) {
   return _(installedPackages).map((pkgPath) => {
     const pkg = readPackageJson(path.resolve(cwd, pkgPath));
     return [pkg.name, pkg.version];
-  }).fromPairs().valueOf();
+  })
+  .fromPairs()
+  .valueOf();
 }

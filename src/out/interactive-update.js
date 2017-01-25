@@ -87,10 +87,11 @@ function createChoices(packages, options) {
     stringLength(str) {
       return chalk.stripColor(str).length;
     },
-  }).split('\n');
+  })
+  .split('\n');
 
-  const choicesWithTableFormating = _.map(choices, (choice, i) => {
-    choice.name = choicesAsATable[i];
+  const choicesWithTableFormating = _.map(choices, (_choice, i) => {
+    _choice.name = choicesAsATable[i];
     return choice;
   });
 
@@ -101,7 +102,7 @@ function createChoices(packages, options) {
   }
 }
 
-function interactive(currentState) {
+export default function interactive(currentState) {
   const packages = currentState.get('packages');
 
   if (currentState.get('debug')) {
@@ -174,8 +175,8 @@ function interactive(currentState) {
     }
 
     return installPackages(saveDependencies, currentState)
-      .then(currentState => installPackages(saveDevDependencies, currentState))
-      .then((currentState) => {
+      .then(_currentState => installPackages(saveDevDependencies, _currentState))
+      .then(() => {
         console.log('');
         console.log(chalk.green('[npm-check] Update complete!'));
         console.log(chalk.green(`[npm-check] ${updatedPackages}`));
@@ -188,5 +189,3 @@ function interactive(currentState) {
       });
   });
 }
-
-export default interactive;

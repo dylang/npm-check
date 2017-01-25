@@ -3,9 +3,9 @@ import path from 'path';
 import globalModulesPath from 'global-modules';
 import readPackageJson from '../in/read-package-json';
 import globalPackages from '../in/get-installed-packages';
-import emoji from '../out/emoji';
+import { enabled } from '../out/emoji';
 
-function init(currentState, userOptions) {
+export default function init(currentState, userOptions) {
   return new Promise((resolve, reject) => {
     _.each(userOptions, (value, key) => currentState.set(key, value));
 
@@ -21,7 +21,7 @@ function init(currentState, userOptions) {
       currentState.set('nodeModulesPath', path.join(cwd, 'node_modules'));
     }
 
-    emoji.enabled(currentState.get('emoji'));
+    enabled(currentState.get('emoji'));
 
     if (currentState.get('cwdPackageJson').error) {
       return reject(currentState.get('cwdPackageJson').error);
@@ -30,5 +30,3 @@ function init(currentState, userOptions) {
     return resolve(currentState);
   });
 }
-
-export default init;

@@ -105,7 +105,7 @@ function render(pkg, currentState) {
   return rows;
 }
 
-function outputConsole(currentState) {
+export default function outputConsole(currentState) {
   const packages = currentState.get('packages');
 
   const rows = packages
@@ -134,5 +134,3 @@ function outputConsole(currentState) {
     process.exitCode = 0;
   }
 }
-
-export default outputConsole;

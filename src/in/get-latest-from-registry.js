@@ -1,11 +1,12 @@
-const _ = require('lodash');
-const bestGuessHomepage = require('./best-guess-homepage');
-const semver = require('semver');
-const packageJson = require('package-json');
+import _ from 'lodash';
+import semver from 'semver';
+import packageJson from 'package-json';
+import bestGuessHomepage from './best-guess-homepage';
+
 const cpuCount = require('os').cpus().length;
 const throat = require('throat')(cpuCount);
 
-function getNpmInfo(packageName) {
+export default function getNpmInfo(packageName) {
   return throat(() => packageJson(packageName))
     .then((rawData) => {
       const CRAZY_HIGH_SEMVER = '8000.0.0';
@@ -33,5 +34,3 @@ function getNpmInfo(packageName) {
       return { error: errorMessage };
     });
 }
-
-export default getNpmInfo;

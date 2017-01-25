@@ -1,6 +1,6 @@
 import gitUrl from 'giturl';
 
-function bestGuessHomepage(data) {
+export default function bestGuessHomepage(data) {
   if (!data) {
     return false;
   }
@@ -15,5 +15,3 @@ function bestGuessHomepage(data) {
       packageDataForLatest.repository.url &&
       gitUrl.parse(packageDataForLatest.repository.url.trim());
 }
-
-export default bestGuessHomepage;

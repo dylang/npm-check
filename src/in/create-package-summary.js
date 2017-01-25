@@ -1,13 +1,13 @@
-import readPackageJson from './read-package-json';
-import getLatestFromRegistry from './get-latest-from-registry';
 import _ from 'lodash';
 import semverDiff from 'semver-diff';
 import pathExists from 'path-exists';
 import path from 'path';
 import semver from 'semver';
 import minimatch from 'minimatch';
+import readPackageJson from './read-package-json';
+import getLatestFromRegistry from './get-latest-from-registry';
 
-function createPackageSummary(moduleName, currentState) {
+export default function createPackageSummary(moduleName, currentState) {
   const cwdPackageJson = currentState.get('cwdPackageJson');
 
   const modulePath = path.join(currentState.get('nodeModulesPath'), moduleName);
@@ -47,7 +47,7 @@ function createPackageSummary(moduleName, currentState) {
 
   function foundIn(files) {
     if (!files) {
-      return;
+      return false;
     }
 
     return `Found in: ${files
@@ -114,5 +114,3 @@ function createPackageSummary(moduleName, currentState) {
     };
   });
 }
-
-export default createPackageSummary;

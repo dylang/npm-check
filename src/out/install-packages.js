@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import execa from 'execa';
 import ora from 'ora';
 
-function install(packages, currentState) {
+export default function install(packages, currentState) {
   if (!packages.length) {
     return Promise.resolve(currentState);
   }
@@ -38,5 +38,3 @@ function install(packages, currentState) {
       throw err;
     });
 }
-
-export default install;

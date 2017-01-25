@@ -23,7 +23,7 @@ const defaultOptions = {
   missingFromPackageJson: {},
 };
 
-function state(userOptions) {
+export default function state(userOptions) {
   const currentStateObject = mergeOptions(defaultOptions, {});
 
   function get(key) {
@@ -51,22 +51,21 @@ function state(userOptions) {
     }
   }
 
-  function inspectIfDebugMode() {
-    if (get('debug')) {
-      inspect();
-    }
+  function all() {
+    return currentStateObject;
   }
 
   function inspect() {
     debug('current state', all());
   }
 
-  function all() {
-    return currentStateObject;
+  function inspectIfDebugMode() {
+    if (get('debug')) {
+      inspect();
+    }
   }
 
   const currentState = { get, set, all, inspectIfDebugMode };
 
   return init(currentState, userOptions);
 }
-export default state;

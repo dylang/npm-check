@@ -1,8 +1,9 @@
-const merge = require('merge-options');
+import merge from 'merge-options';
 
-function readPackageJson(filename) {
+export default function readPackageJson(filename) {
   let pkg;
   let error;
+
   try {
     pkg = require(filename);
   } catch (e) {
@@ -16,5 +17,3 @@ function readPackageJson(filename) {
   }
   return merge(pkg, { devDependencies: {}, dependencies: {}, error });
 }
-
-export default readPackageJson;
