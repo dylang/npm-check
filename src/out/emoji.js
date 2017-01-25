@@ -3,11 +3,9 @@ import emoji from 'node-emoji';
 let emojiEnabled = true;
 
 export default function output(name) {
-  if (emojiEnabled) {
-    return emoji.emojify(name);
-  }
-
-  return '';
+  return emojiEnabled
+    ? emoji.emojify(name)
+    : '';
 }
 
 export function enabled(val) {

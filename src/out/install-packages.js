@@ -1,5 +1,3 @@
-
-
 import chalk from 'chalk';
 import execa from 'execa';
 import ora from 'ora';
@@ -15,11 +13,11 @@ function install(packages, currentState) {
   const color = chalk.supportsColor ? '--color=always' : null;
 
   const npmArgs = ['install']
-        .concat(installGlobal)
-        .concat(saveExact)
-        .concat(packages)
-        .concat(color)
-        .filter(Boolean);
+    .concat(installGlobal)
+    .concat(saveExact)
+    .concat(packages)
+    .concat(color)
+    .filter(Boolean);
 
   console.log('');
   console.log(`$ ${chalk.green(installer)} ${chalk.green(npmArgs.join(' '))}`);
@@ -27,16 +25,18 @@ function install(packages, currentState) {
   spinner.enabled = spinner.enabled && currentState.get('spinner');
   spinner.start();
 
-  return execa(installer, npmArgs, { cwd: currentState.get('cwd') }).then((output) => {
-    spinner.stop();
-    console.log(output.stdout);
-    console.log(output.stderr);
+  return execa(installer, npmArgs, { cwd: currentState.get('cwd') })
+    .then((output) => {
+      spinner.stop();
+      console.log(output.stdout);
+      console.log(output.stderr);
 
-    return currentState;
-  }).catch((err) => {
-    spinner.stop();
-    throw err;
-  });
+      return currentState;
+    })
+    .catch((err) => {
+      spinner.stop();
+      throw err;
+    });
 }
 
 export default install;

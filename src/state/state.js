@@ -1,5 +1,3 @@
-
-
 import mergeOptions from 'merge-options';
 import init from './init';
 import debug from './debug';
@@ -10,7 +8,6 @@ const defaultOptions = {
   cwd: process.cwd(),
   nodeModulesPath: false,
   skipUnused: false,
-
   ignoreDev: false,
   forceColor: false,
   saveExact: false,
@@ -19,10 +16,8 @@ const defaultOptions = {
   spinner: false,
   installer: 'npm',
   ignore: [],
-
   globalPackages: {},
   cwdPackageJson: { devDependencies: {}, dependencies: {} },
-
   packages: false,
   unusedDependencies: false,
   missingFromPackageJson: {},
@@ -46,7 +41,13 @@ function state(userOptions) {
     if (currentStateObject.hasOwnProperty(key)) {
       currentStateObject[key] = value;
     } else {
-      throw new Error(`unknown option "${key}" setting to "${JSON.stringify(value, false, 4)}".`);
+      throw new Error(
+        `unknown option "${key}" setting to "${JSON.stringify(
+          value,
+          false,
+          4,
+        )}".`,
+      );
     }
   }
 
@@ -64,12 +65,7 @@ function state(userOptions) {
     return currentStateObject;
   }
 
-  const currentState = {
-    get,
-    set,
-    all,
-    inspectIfDebugMode,
-  };
+  const currentState = { get, set, all, inspectIfDebugMode };
 
   return init(currentState, userOptions);
 }

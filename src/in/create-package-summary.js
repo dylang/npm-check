@@ -1,5 +1,3 @@
-
-
 import readPackageJson from './read-package-json';
 import getLatestFromRegistry from './get-latest-from-registry';
 import _ from 'lodash';
@@ -14,27 +12,31 @@ function createPackageSummary(moduleName, currentState) {
 
   const modulePath = path.join(currentState.get('nodeModulesPath'), moduleName);
   const packageIsInstalled = pathExists.sync(modulePath);
-  const modulePackageJson = readPackageJson(path.join(modulePath, 'package.json'));
+  const modulePackageJson = readPackageJson(
+    path.join(modulePath, 'package.json'),
+  );
 
-    // Ignore private packages
+  // Ignore private packages
   const isPrivate = Boolean(modulePackageJson.private);
   if (isPrivate) {
     return false;
   }
 
-    // Ignore packages that are using github or file urls
+  // Ignore packages that are using github or file urls
   const packageJsonVersion = cwdPackageJson.dependencies[moduleName] ||
-        cwdPackageJson.devDependencies[moduleName] ||
-        currentState.get('globalPackages')[moduleName];
+    cwdPackageJson.devDependencies[moduleName] ||
+    currentState.get('globalPackages')[moduleName];
 
   if (packageJsonVersion && !semver.validRange(packageJsonVersion)) {
     return false;
   }
 
-    // Ignore specified '--ignore' package globs
+  // Ignore specified '--ignore' package globs
   const ignore = currentState.get('ignore');
   if (ignore) {
-    const ignoreMatch = Array.isArray(ignore) ? ignore.some(ignoredModule => minimatch(moduleName, ignoredModule)) : minimatch(moduleName, ignore);
+    const ignoreMatch = Array.isArray(ignore)
+      ? ignore.some(ignoredModule => minimatch(moduleName, ignoredModule))
+      : minimatch(moduleName, ignore);
     if (ignoreMatch) {
       return false;
     }
@@ -48,63 +50,69 @@ function createPackageSummary(moduleName, currentState) {
       return;
     }
 
-    return `Found in: ${files.map(filepath => filepath.replace(currentState.get('cwd'), ''))
-            .join(', ')}`;
+    return `Found in: ${files
+      .map(filepath => filepath.replace(currentState.get('cwd'), ''))
+      .join(', ')}`;
   }
 
-  return getLatestFromRegistry(moduleName)
-        .then((fromRegistry) => {
-          const installedVersion = modulePackageJson.version;
+  return getLatestFromRegistry(moduleName).then((fromRegistry) => {
+    const installedVersion = modulePackageJson.version;
 
-          const latest = installedVersion && fromRegistry.latest && fromRegistry.next && semver.gt(installedVersion, fromRegistry.latest) ? fromRegistry.next : fromRegistry.latest;
-          const versions = fromRegistry.versions || [];
+    const latest = installedVersion &&
+      fromRegistry.latest &&
+      fromRegistry.next &&
+      semver.gt(installedVersion, fromRegistry.latest)
+      ? fromRegistry.next
+      : fromRegistry.latest;
+    const versions = fromRegistry.versions || [];
 
-          const versionWanted = semver.maxSatisfying(versions, packageJsonVersion);
+    const versionWanted = semver.maxSatisfying(versions, packageJsonVersion);
 
-          const versionToUse = installedVersion || versionWanted;
-          const usingNonSemver = semver.valid(latest) && semver.lt(latest, '1.0.0-pre');
+    const versionToUse = installedVersion || versionWanted;
+    const usingNonSemver = semver.valid(latest) &&
+      semver.lt(latest, '1.0.0-pre');
 
-          const bump = semver.valid(latest) &&
-                        semver.valid(versionToUse) &&
-                        (usingNonSemver && semverDiff(versionToUse, latest) ? 'nonSemver' : semverDiff(versionToUse, latest));
+    const bump = semver.valid(latest) &&
+      semver.valid(versionToUse) &&
+      (usingNonSemver && semverDiff(versionToUse, latest)
+        ? 'nonSemver'
+        : semverDiff(versionToUse, latest));
 
-          const unused = _.includes(unusedDependencies, moduleName);
+    const unused = _.includes(unusedDependencies, moduleName);
 
-          return {
-                // info
-            moduleName,
-            homepage: fromRegistry.homepage,
-            regError: fromRegistry.error,
-            pkgError: modulePackageJson.error,
-
-                // versions
-            latest,
-            installed: versionToUse,
-            isInstalled: packageIsInstalled,
-            notInstalled: !packageIsInstalled,
-            packageWanted: versionWanted,
-            packageJson: packageJsonVersion,
-
-                // Missing from package json
-            notInPackageJson: foundIn(missingFromPackageJson[moduleName]),
-
-                // meta
-            devDependency: _.has(cwdPackageJson.devDependencies, moduleName),
-            usedInScripts: _.findKey(cwdPackageJson.scripts, script => script.indexOf(moduleName) !== -1),
-            mismatch: semver.validRange(packageJsonVersion) &&
-                    semver.valid(versionToUse) &&
-                    !semver.satisfies(versionToUse, packageJsonVersion),
-            semverValid:
-                    semver.valid(versionToUse),
-            easyUpgrade: semver.validRange(packageJsonVersion) &&
-                    semver.valid(versionToUse) &&
-                    semver.satisfies(latest, packageJsonVersion) &&
-                    bump !== 'major',
-            bump,
-
-            unused,
-          };
-        });
+    return {
+      // info
+      moduleName,
+      homepage: fromRegistry.homepage,
+      regError: fromRegistry.error,
+      pkgError: modulePackageJson.error,
+      // versions
+      latest,
+      installed: versionToUse,
+      isInstalled: packageIsInstalled,
+      notInstalled: !packageIsInstalled,
+      packageWanted: versionWanted,
+      packageJson: packageJsonVersion,
+      // Missing from package json
+      notInPackageJson: foundIn(missingFromPackageJson[moduleName]),
+      // meta
+      devDependency: _.has(cwdPackageJson.devDependencies, moduleName),
+      usedInScripts: _.findKey(
+        cwdPackageJson.scripts,
+        script => script.indexOf(moduleName) !== -1,
+      ),
+      mismatch: semver.validRange(packageJsonVersion) &&
+        semver.valid(versionToUse) &&
+        !semver.satisfies(versionToUse, packageJsonVersion),
+      semverValid: semver.valid(versionToUse),
+      easyUpgrade: semver.validRange(packageJsonVersion) &&
+        semver.valid(versionToUse) &&
+        semver.satisfies(latest, packageJsonVersion) &&
+        bump !== 'major',
+      bump,
+      unused,
+    };
+  });
 }
 
 export default createPackageSummary;

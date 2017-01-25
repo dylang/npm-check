@@ -1,5 +1,3 @@
-
-
 import _ from 'lodash';
 import path from 'path';
 import globalModulesPath from 'global-modules';

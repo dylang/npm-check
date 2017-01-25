@@ -1,5 +1,3 @@
-
-
 import _ from 'lodash';
 import inquirer from 'inquirer';
 import chalk from 'chalk';
@@ -9,28 +7,40 @@ import emoji from './emoji';
 
 const UI_GROUPS = [
   {
-    title: chalk.bold.underline.green('Update package.json to match version installed.'),
+    title: chalk.bold.underline.green(
+      'Update package.json to match version installed.',
+    ),
     filter: { mismatch: true, bump: null },
   },
   {
-    title: `${chalk.bold.underline.green('Missing.')} ${chalk.green('You probably want these.')}`,
+    title: `${chalk.bold.underline.green('Missing.')} ${chalk.green(
+      'You probably want these.',
+    )}`,
     filter: { notInstalled: true, bump: null },
   },
   {
-    title: `${chalk.bold.underline.green('Patch Update')} ${chalk.green('Backwards-compatible bug fixes.')}`,
+    title: `${chalk.bold.underline.green('Patch Update')} ${chalk.green(
+      'Backwards-compatible bug fixes.',
+    )}`,
     filter: { bump: 'patch' },
   },
   {
-    title: `${chalk.yellow.underline.bold('Minor Update')} ${chalk.yellow('New backwards-compatible features.')}`,
+    title: `${chalk.yellow.underline.bold('Minor Update')} ${chalk.yellow(
+      'New backwards-compatible features.',
+    )}`,
     bgColor: 'yellow',
     filter: { bump: 'minor' },
   },
   {
-    title: `${chalk.red.underline.bold('Major Update')} ${chalk.red('Potentially breaking API changes. Use caution.')}`,
+    title: `${chalk.red.underline.bold('Major Update')} ${chalk.red(
+      'Potentially breaking API changes. Use caution.',
+    )}`,
     filter: { bump: 'major' },
   },
   {
-    title: `${chalk.magenta.underline.bold('Non-Semver')} ${chalk.magenta('Versions less than 1.0.0, caution.')}`,
+    title: `${chalk.magenta.underline.bold('Non-Semver')} ${chalk.magenta(
+      'Versions less than 1.0.0, caution.',
+    )}`,
     filter: { bump: 'nonSemver' },
   },
 ];
@@ -60,11 +70,7 @@ function choice(pkg) {
     return false;
   }
 
-  return {
-    value: pkg,
-    name: label(pkg),
-    short: short(pkg),
-  };
+  return { value: pkg, name: label(pkg), short: short(pkg) };
 }
 
 function unselectable(options) {
@@ -74,8 +80,7 @@ function unselectable(options) {
 function createChoices(packages, options) {
   const filteredChoices = _.filter(packages, options.filter);
 
-  const choices = filteredChoices.map(choice)
-        .filter(Boolean);
+  const choices = filteredChoices.map(choice).filter(Boolean);
 
   const choicesAsATable = table(_.map(choices, 'name'), {
     align: ['l', 'l', 'l'],
@@ -103,18 +108,27 @@ function interactive(currentState) {
     console.log('packages', packages);
   }
 
-  const choicesGrouped = UI_GROUPS.map(group => createChoices(packages, group))
-        .filter(Boolean);
+  const choicesGrouped = UI_GROUPS
+    .map(group => createChoices(packages, group))
+    .filter(Boolean);
 
   const choices = _.flatten(choicesGrouped);
 
   if (!choices.length) {
-    console.log(`${emoji(':heart:  ')}Your modules look ${chalk.bold('amazing')}. Keep up the great work.${emoji(' :heart:')}`);
+    console.log(
+      `${emoji(':heart:  ')}Your modules look ${chalk.bold(
+        'amazing',
+      )}. Keep up the great work.${emoji(' :heart:')}`,
+    );
     return;
   }
 
   choices.push(unselectable());
-  choices.push(unselectable({ title: 'Space to select. Enter to start upgrading. Control-C to cancel.' }));
+  choices.push(
+    unselectable({
+      title: 'Space to select. Enter to start upgrading. Control-C to cancel.',
+    }),
+  );
 
   const questions = [
     {
@@ -126,7 +140,9 @@ function interactive(currentState) {
     },
   ];
 
-  return new Promise(resolve => inquirer.prompt(questions, resolve)).then((answers) => {
+  return new Promise(
+    resolve => inquirer.prompt(questions, resolve),
+  ).then((answers) => {
     const packagesToUpdate = answers.packages;
 
     if (!packagesToUpdate || !packagesToUpdate.length) {
@@ -135,15 +151,16 @@ function interactive(currentState) {
     }
 
     const saveDependencies = packagesToUpdate
-            .filter(pkg => !pkg.devDependency)
-            .map(pkg => `${pkg.moduleName}@${pkg.latest}`);
+      .filter(pkg => !pkg.devDependency)
+      .map(pkg => `${pkg.moduleName}@${pkg.latest}`);
 
     const saveDevDependencies = packagesToUpdate
-            .filter(pkg => pkg.devDependency)
-            .map(pkg => `${pkg.moduleName}@${pkg.latest}`);
+      .filter(pkg => pkg.devDependency)
+      .map(pkg => `${pkg.moduleName}@${pkg.latest}`);
 
     const updatedPackages = packagesToUpdate
-            .map(pkg => `${pkg.moduleName}@${pkg.latest}`).join(', ');
+      .map(pkg => `${pkg.moduleName}@${pkg.latest}`)
+      .join(', ');
 
     if (!currentState.get('global')) {
       if (saveDependencies.length) {
@@ -156,14 +173,18 @@ function interactive(currentState) {
     }
 
     return installPackages(saveDependencies, currentState)
-            .then(currentState => installPackages(saveDevDependencies, currentState))
-            .then((currentState) => {
-              console.log('');
-              console.log(chalk.green('[npm-check] Update complete!'));
-              console.log(chalk.green(`[npm-check] ${updatedPackages}`));
-              console.log(chalk.green('[npm-check] You should re-run your tests to make sure everything works with the updates.'));
-              return currentState;
-            });
+      .then(currentState => installPackages(saveDevDependencies, currentState))
+      .then((currentState) => {
+        console.log('');
+        console.log(chalk.green('[npm-check] Update complete!'));
+        console.log(chalk.green(`[npm-check] ${updatedPackages}`));
+        console.log(
+          chalk.green(
+            '[npm-check] You should re-run your tests to make sure everything works with the updates.',
+          ),
+        );
+        return currentState;
+      });
   });
 }
 

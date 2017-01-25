@@ -12,8 +12,9 @@ import debug from './state/debug';
 
 updateNotifier({ pkg }).notify();
 
-const cli = meow({
-  help: `
+const cli = meow(
+  {
+    help: `
         Usage
           $ npm-check <path> <options>
 
@@ -35,7 +36,8 @@ const cli = meow({
           $ npm-check           # See what can be updated, what isn't being used.
           $ npm-check ../foo    # Check another path.
           $ npm-check -gu       # Update globally installed modules by picking which ones to upgrade.
-    ` },
+    `,
+  },
   {
     alias: {
       u: 'update',
@@ -60,10 +62,9 @@ const cli = meow({
       'emoji',
       'spinner',
     ],
-    string: [
-      'ignore',
-    ],
-  });
+    string: ['ignore'],
+  },
+);
 
 const options = {
   cwd: cli.input[0] || cli.flags.dir,
@@ -85,21 +86,21 @@ if (options.debug) {
 }
 
 npmCheck(options)
-    .then((currentState) => {
-      currentState.inspectIfDebugMode();
+  .then((currentState) => {
+    currentState.inspectIfDebugMode();
 
-      if (options.update) {
-        return interactiveUpdate(currentState);
-      }
+    if (options.update) {
+      return interactiveUpdate(currentState);
+    }
 
-      return staticOutput(currentState);
-    })
-    .catch((err) => {
-      console.log(err.message);
-      if (options.debug) {
-        console.log(createCallsiteRecord(err).renderSync());
-      } else {
-        console.log('For more detail, add `--debug` to the command');
-      }
-      process.exit(1);
-    });
+    return staticOutput(currentState);
+  })
+  .catch((err) => {
+    console.log(err.message);
+    if (options.debug) {
+      console.log(createCallsiteRecord(err).renderSync());
+    } else {
+      console.log('For more detail, add `--debug` to the command');
+    }
+    process.exit(1);
+  });

@@ -1,5 +1,3 @@
-
-
 import chalk from 'chalk';
 
 function debug() {

@@ -1,5 +1,3 @@
-
-
 import co from 'co';
 import merge from 'merge-options';
 import ora from 'ora';
@@ -29,15 +27,17 @@ export default function (currentState) {
     }
 
     const allDependencies = dependencies(cwdPackageJson);
-    const allDependenciesIncludingMissing = Object.keys(merge(allDependencies, currentState.get('missingFromPackageJson')));
+    const allDependenciesIncludingMissing = Object.keys(
+      merge(allDependencies, currentState.get('missingFromPackageJson')),
+    );
 
     const arrayOfPackageInfo = yield allDependenciesIncludingMissing
-            .map(moduleName => createPackageSummary(moduleName, currentState))
-            .filter(Boolean);
+      .map(moduleName => createPackageSummary(moduleName, currentState))
+      .filter(Boolean);
 
     currentState.set('packages', arrayOfPackageInfo);
 
     spinner.stop();
     return currentState;
   });
-};
+}
