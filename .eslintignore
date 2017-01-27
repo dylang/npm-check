@@ -1,2 +1,3 @@
 flow-typed/**/*.js
 lib
+test/e2e

@@ -1,0 +1,18 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^3.14.1",
+    "eslint-config-airbnb-base": "^11.0.1"
+  },
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "eslint-plugin-compat": "^1.0.1",
+    "eslint-plugin-react": "^6.9.0"
+  }
+}

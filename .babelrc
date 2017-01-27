@@ -3,5 +3,8 @@
     ["env", { "targets": { "node": 0.10 }, "useBuiltIns": true }],
     "stage-0"
   ],
-  "plugins": ["add-module-exports", "transform-runtime"]
+  "plugins": [
+    "transform-runtime",
+    "add-module-exports",
+  ]
 }

@@ -11,7 +11,7 @@
     "flow": "flow check",
     "flow-typed": "flow-typed install",
     "lint": "eslint --cache --format=node_modules/eslint-formatter-pretty .",
-    "spec": "jest",
+    "spec": "npm run build && npm link && jest",
     "test": "npm run lint && npm run flow && npm run spec",
     "version": "npm run build",
     "watch": "babel src --out-dir lib --watch"
@@ -87,6 +87,7 @@
     "babel-preset-env": "^1.1.8",
     "babel-preset-es2017": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0",
+    "chai": "^3.5.0",
     "cross-env": "^3.1.4",
     "eslint": "^3.14.0",
     "eslint-config-airbnb-base": "^11.0.1",
