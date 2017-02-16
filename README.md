@@ -61,6 +61,7 @@ Options
   -g, --global          Look at global modules.
   -s, --skip-unused     Skip check for unused packages.
   -p, --production      Skip devDependencies.
+  -d, --dev-only        Look at devDependencies only (skip dependencies).
   -i, --ignore          Ignore dependencies based on succeeding glob.
   -E, --save-exact      Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.
   --no-color            Force or disable color output.
@@ -123,6 +124,12 @@ By default `npm-check` will look at packages listed as `dependencies` and `devDe
 
 This option will let it ignore outdated and unused checks for packages listed as `devDependencies`.
 
+#### `-d, --dev-only`
+
+Ignore `dependencies` and only check `devDependencies`.
+
+This option will let it ignore outdated and unused checks for packages listed as `dependencies`.
+
 #### `-i, --ignore`
 
 Ignore dependencies that match specified glob.
@@ -183,6 +190,11 @@ npmCheck(options)
 
 * Ignore `devDependencies`.
 * This is called `--production` on the command line to match `npm`.
+* default is `false`
+
+### `devOnly`
+
+* Ignore `dependencies` and only check `devDependencies`.
 * default is `false`
 
 #### `cwd`

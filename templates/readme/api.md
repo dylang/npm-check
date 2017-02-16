@@ -31,6 +31,11 @@ npmCheck(options)
 * This is called `--production` on the command line to match `npm`.
 * default is `false`
 
+### `devOnly`
+
+* Ignore `dependencies` and only check `devDependencies`.
+* default is `false`
+
 ### `cwd`
 
 * Override where `npm-check` checks.
