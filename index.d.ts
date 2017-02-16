@@ -3,6 +3,7 @@ declare module NpmCheck {
     global?: boolean;
     update?: boolean;
     skipUnused?: boolean;
+    devOnly?: boolean;
     ignoreDev?: boolean;
     cwd?: string;
     saveExact?: boolean;
