@@ -20,7 +20,7 @@ const defaultOptions = {
   cwdPackageJson: { devDependencies: {}, dependencies: {} },
   packages: false,
   unusedDependencies: false,
-  missingFromPackageJson: {},
+  missingFromPackageJson: {}
 };
 
 export default function state(userOptions) {

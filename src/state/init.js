@@ -5,6 +5,8 @@ import readPackageJson from '../in/read-package-json';
 import globalPackages from '../in/get-installed-packages';
 import { enabled } from '../out/emoji';
 
+/* eslint promise/avoid-new: 1 */
+
 export default function init(currentState, userOptions) {
   return new Promise((resolve, reject) => {
     _.each(userOptions, (value, key) => currentState.set(key, value));

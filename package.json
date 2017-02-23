@@ -91,9 +91,8 @@
     "chai": "^3.5.0",
     "cross-env": "^3.1.4",
     "eslint": "^3.16.1",
-    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-config-bliss": "^0.0.7",
     "eslint-formatter-pretty": "^1.1.0",
-    "eslint-plugin-import": "^2.2.0",
     "flow-bin": "^0.39.0",
     "flow-typed": "^2.0.0",
     "jest-cli": "^19.0.2"

@@ -26,7 +26,7 @@ export default function getNpmInfo(packageName) {
         latest: latestStableRelease,
         next,
         versions: sortedVersions,
-        homepage: bestGuessHomepage(rawData),
+        homepage: bestGuessHomepage(rawData)
       };
     })
     .catch((err) => {

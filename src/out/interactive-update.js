@@ -5,44 +5,46 @@ import table from 'text-table';
 import installPackages from './install-packages';
 import emoji from './emoji';
 
+/* eslint promise/no-nesting: 1, promise/avoid-new: 1 */
+
 const UI_GROUPS = [
   {
     title: chalk.bold.underline.green(
       'Update package.json to match version installed.',
     ),
-    filter: { mismatch: true, bump: null },
+    filter: { mismatch: true, bump: null }
   },
   {
     title: `${chalk.bold.underline.green('Missing.')} ${chalk.green(
       'You probably want these.',
     )}`,
-    filter: { notInstalled: true, bump: null },
+    filter: { notInstalled: true, bump: null }
   },
   {
     title: `${chalk.bold.underline.green('Patch Update')} ${chalk.green(
       'Backwards-compatible bug fixes.',
     )}`,
-    filter: { bump: 'patch' },
+    filter: { bump: 'patch' }
   },
   {
     title: `${chalk.yellow.underline.bold('Minor Update')} ${chalk.yellow(
       'New backwards-compatible features.',
     )}`,
     bgColor: 'yellow',
-    filter: { bump: 'minor' },
+    filter: { bump: 'minor' }
   },
   {
     title: `${chalk.red.underline.bold('Major Update')} ${chalk.red(
       'Potentially breaking API changes. Use caution.',
     )}`,
-    filter: { bump: 'major' },
+    filter: { bump: 'major' }
   },
   {
     title: `${chalk.magenta.underline.bold('Non-Semver')} ${chalk.magenta(
       'Versions less than 1.0.0, caution.',
     )}`,
-    filter: { bump: 'nonSemver' },
-  },
+    filter: { bump: 'nonSemver' }
+  }
 ];
 
 function label(pkg) {
@@ -57,7 +59,7 @@ function label(pkg) {
     installed,
     installed && '❯',
     chalk.bold(pkg.latest || ''),
-    pkg.latest ? homepage : pkg.regError || pkg.pkgError,
+    pkg.latest ? homepage : pkg.regError || pkg.pkgError
   ];
 }
 
@@ -86,13 +88,13 @@ function createChoices(packages, options) {
     align: ['l', 'l', 'l'],
     stringLength(str) {
       return chalk.stripColor(str).length;
-    },
+    }
   })
   .split('\n');
 
   const choicesWithTableFormating = _.map(choices, (_choice, i) => ({
     ..._choice,
-    name: choicesAsATable[i],
+    name: choicesAsATable[i]
   }));
 
   if (choicesWithTableFormating.length) {
@@ -128,7 +130,7 @@ export default function interactive(currentState) {
   choices.push(unselectable());
   choices.push(
     unselectable({
-      title: 'Space to select. Enter to start upgrading. Control-C to cancel.',
+      title: 'Space to select. Enter to start upgrading. Control-C to cancel.'
     }),
   );
 
@@ -138,8 +140,8 @@ export default function interactive(currentState) {
       message: 'Choose which packages to update.',
       type: 'checkbox',
       choices: choices.concat(unselectable()),
-      pageSize: process.stdout.rows - 2,
-    },
+      pageSize: process.stdout.rows - 2
+    }
   ];
 
   return new Promise(

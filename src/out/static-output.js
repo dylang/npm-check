@@ -43,7 +43,7 @@ function render(pkg, currentState) {
         )} Your local install is out of date. ${chalk.blue.underline(
           pkg.homepage || '',
         )}`,
-        indent + upgradeMessage,
+        indent + upgradeMessage
       ]
       : '',
     pkg.bump && !pkg.easyUpgrade
@@ -55,7 +55,7 @@ function render(pkg, currentState) {
         )} ${uppercaseFirstLetter(
           pkg.bump,
         )} update available. ${chalk.blue.underline(pkg.homepage || '')}`,
-        indent + upgradeMessage,
+        indent + upgradeMessage
       ]
       : '',
     pkg.unused
@@ -72,7 +72,7 @@ function render(pkg, currentState) {
           `npm uninstall --save${pkg.devDependency
             ? '-dev'
             : ''} ${packageName}`,
-        )}`,
+        )}`
       ]
       : '',
     pkg.mismatch && !pkg.bump
@@ -84,7 +84,7 @@ function render(pkg, currentState) {
       ? `${chalk.bgRed.white.bold(
         `${emoji(' :no_entry: ')} NPM ERR! `,
       )} ${chalk.red(pkg.regError)}`
-      : '',
+      : ''
   ])
     .flatten()
     .compact()
@@ -114,7 +114,7 @@ export default function outputConsole(currentState) {
 
   if (rows.length) {
     const renderedTable = table(rows, {
-      stringLength: s => chalk.stripColor(s).length,
+      stringLength: s => chalk.stripColor(s).length
     });
 
     console.log('');

@@ -1,6 +1,24 @@
 {
-  "extends": "airbnb-base",
+  "extends": "bliss",
   "rules": {
-    "no-console": 0
+    "fp/no-arguments": "error",
+    "fp/no-class": 0,
+    "fp/no-delete": 0,
+    "fp/no-events": 0,
+    "fp/no-get-set": 0,
+    "fp/no-let": 0,
+    "fp/no-loops": 0,
+    "fp/no-mutating-assign": 0,
+    "fp/no-mutating-methods": 0,
+    "fp/no-mutation": 0,
+    "fp/no-nil": 0,
+    "fp/no-proxy": 0,
+    "fp/no-rest-parameters": 0,
+    "fp/no-this": 0,
+    "fp/no-throw": 0,
+    "fp/no-unused-expression": 0,
+    "fp/no-valueof-field": 0,
+    "no-var": 2,
+    "no-console": 0,
   }
 }

@@ -36,7 +36,7 @@ const cli = meow(
           $ npm-check           # See what can be updated, what isn't being used.
           $ npm-check ../foo    # Check another path.
           $ npm-check -gu       # Update globally installed modules by picking which ones to upgrade.
-    `,
+    `
   },
   {
     alias: {
@@ -45,12 +45,12 @@ const cli = meow(
       s: 'skip-unused',
       p: 'production',
       E: 'save-exact',
-      i: 'ignore',
+      i: 'ignore'
     },
     default: {
       dir: pkgDir.sync() || process.cwd(),
       emoji: !isCI,
-      spinner: !isCI,
+      spinner: !isCI
     },
     boolean: [
       'update',
@@ -60,9 +60,9 @@ const cli = meow(
       'save-exact',
       'color',
       'emoji',
-      'spinner',
+      'spinner'
     ],
-    string: ['ignore'],
+    string: ['ignore']
   },
 );
 
@@ -77,7 +77,7 @@ const options = {
   installer: process.env.NPM_CHECK_INSTALLER || 'npm',
   debug: cli.flags.debug,
   spinner: cli.flags.spinner,
-  ignore: cli.flags.ignore,
+  ignore: cli.flags.ignore
 };
 
 if (options.debug) {

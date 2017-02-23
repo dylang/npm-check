@@ -110,7 +110,7 @@ export default function createPackageSummary(moduleName, currentState) {
         semver.satisfies(latest, packageJsonVersion) &&
         bump !== 'major',
       bump,
-      unused,
+      unused
     };
   });
 }

@@ -2,6 +2,8 @@ import depcheck from 'depcheck';
 import ora from 'ora';
 import _ from 'lodash';
 
+/* eslint promise/avoid-new: 1 */
+
 function skipUnused(currentState) {
   return currentState.get('skipUnused') || // manual option to ignore this
     currentState.get('global') || // global modules
@@ -29,7 +31,7 @@ export default function checkUnused(currentState) {
         '.generated',
         'build',
         'fixtures',
-        'jspm_packages',
+        'jspm_packages'
       ],
       ignoreMatches: [
         'gulp-*',
@@ -42,8 +44,8 @@ export default function checkUnused(currentState) {
         '@types/*',
         'grunt',
         'mocha',
-        'ava',
-      ],
+        'ava'
+      ]
     };
 
     depcheck(currentState.get('cwd'), depCheckOptions, resolve);
