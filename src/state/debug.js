@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 
-export default function debug() {
+export default function debug(...args) {
   console.log(chalk.green('[npm-check] debug'));
-  console.log(...arguments);
+  console.log(args);
   console.log(`${chalk.green('===============================')}`);
 }

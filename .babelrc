@@ -1,6 +1,6 @@
 {
   "presets": [
-    ["env", { "targets": { "node": 0.10 }, "useBuiltIns": true }],
+    ["env", { "targets": { "node": 4 }, "useBuiltIns": true }],
     "stage-0"
   ],
   "plugins": [

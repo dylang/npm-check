@@ -1,5 +1,7 @@
 import merge from 'merge-options';
 
+/* eslint global-require: 0, import/no-dynamic-require: 0 */
+
 export default function readPackageJson(filename) {
   let pkg;
   let error;

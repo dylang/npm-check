@@ -90,16 +90,18 @@ function createChoices(packages, options) {
   })
   .split('\n');
 
-  const choicesWithTableFormating = _.map(choices, (_choice, i) => {
-    _choice.name = choicesAsATable[i];
-    return choice;
-  });
+  const choicesWithTableFormating = _.map(choices, (_choice, i) => ({
+    ..._choice,
+    name: choicesAsATable[i],
+  }));
 
   if (choicesWithTableFormating.length) {
     choices.unshift(unselectable(options));
     choices.unshift(unselectable());
     return choices;
   }
+
+  return false;
 }
 
 export default function interactive(currentState) {
@@ -116,12 +118,11 @@ export default function interactive(currentState) {
   const choices = _.flatten(choicesGrouped);
 
   if (!choices.length) {
-    console.log(
+    return console.log(
       `${emoji(':heart:  ')}Your modules look ${chalk.bold(
         'amazing',
       )}. Keep up the great work.${emoji(' :heart:')}`,
     );
-    return;
   }
 
   choices.push(unselectable());

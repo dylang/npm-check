@@ -27,7 +27,7 @@ export default function state(userOptions) {
   const currentStateObject = mergeOptions(defaultOptions, {});
 
   function get(key) {
-    if (!currentStateObject.hasOwnProperty(key)) {
+    if (!(key in currentStateObject)) {
       throw new Error(`Can't get unknown option "${key}".`);
     }
     return currentStateObject[key];
@@ -38,7 +38,7 @@ export default function state(userOptions) {
       debug('set key', key, 'to value', value);
     }
 
-    if (currentStateObject.hasOwnProperty(key)) {
+    if (key in currentStateObject) {
       currentStateObject[key] = value;
     } else {
       throw new Error(
