@@ -33,7 +33,7 @@ npmCheck(options)
 
 ### `devOnly`
 
-* Ignore `dependencies` and only check `devDependencies`.
+* Ignore `dependencies` and `peerDependencies` and only check `devDependencies`.
 * default is `false`
 
 ### `cwd`

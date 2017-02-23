@@ -1,3 +1,5 @@
 /.idea/
+/lib-es5/
 /node_modules/
 /*.log
+/.DS_Store
