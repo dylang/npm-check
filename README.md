@@ -66,7 +66,7 @@ Options
   -E, --save-exact      Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.
   --no-color            Force or disable color output.
   --no-emoji            Remove emoji support. No emoji in default in CI environments.
-  --debug               Debug output. Throw in a gist when creating issues on github.
+  --debug               Show debug output. Throw in a gist when creating issues on github.
 
 Examples
   $ npm-check           # See what can be updated, what isn't being used.
@@ -156,9 +156,6 @@ Enable or disable emoji support. Useful for terminals that don't support them. A
 
 Enable or disable the spinner. Useful for terminals that don't support them. Automatically disabled in CI servers.
 
-
-
-
 ### API
 
 The API is here in case you want to wrap this with your CI toolset.
@@ -170,16 +167,16 @@ npmCheck(options)
   .then(currentState => console.log(currentState.get('packages')));
 ```
 
+#### `update`
+
+* Interactive update.
+* default is `false`
+
 #### `global`
 
 * Check global modules.
 * default is `false`
 * `cwd` is automatically set with this option.
-
-#### `update`
-
-* Interactive update.
-* default is `false`
 
 #### `skipUnused`
 
@@ -192,21 +189,30 @@ npmCheck(options)
 * This is called `--production` on the command line to match `npm`.
 * default is `false`
 
-### `devOnly`
+#### `devOnly`
 
 * Ignore `dependencies` and only check `devDependencies`.
 * default is `false`
 
-#### `cwd`
+#### `ignore`
 
-* Override where `npm-check` checks.
-* default is `process.cwd()`
+* Ignore dependencies that match specified glob.
+* default is `undefined`
 
 #### `saveExact`
 
 * Update package.json with exact version `x.y.z`  instead of semver range `^x.y.z`.
 * default is `false`
 
+#### `debug`
+
+* Show debug output. Throw in a gist when creating issues on github.
+* default is `false`
+
+#### `cwd`
+
+* Override where `npm-check` checks.
+* default is `process.cwd()`
 
 #### `currentState`
 
@@ -240,18 +246,12 @@ Each item in the array will look like the following:
 
 You will also see this if you use `--debug` on the command line.
 
-
-
 ### Inspiration
 
 * [npm outdated](https://www.npmjs.com/doc/cli/npm-outdated.html) - awkward output, requires --depth=0 to be grokable.
 * [david](https://github.com/alanshaw/david) - does not work with private registries.
 * [update-notifier](https://github.com/yeoman/update-notifier) - for single modules, not everything in package.json.
 * [depcheck](https://github.com/depcheck/depcheck) - only part of the puzzle. npm-check uses depcheck.
-
-
-
-
 
 ### About the Author
 
@@ -276,15 +276,9 @@ Here's some of my other Node projects:
 
 _This list was generated using [anthology](https://github.com/dylang/anthology)._
 
-
 ### License
 Copyright (c) 2016 Dylan Greene, contributors.
 
 Released under the [MIT license](https://tldrlegal.com/license/mit-license).
 
 Screenshots are [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike).
-
-***
-_Generated using [grunt-readme](https://github.com/jonschlinkert/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Thursday, April 7, 2016._
-_To make changes to this document look in `/templates/readme/`
-
