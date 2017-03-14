@@ -197,7 +197,7 @@ npmCheck(options)
 #### `ignore`
 
 * Ignore dependencies that match specified glob.
-* default is `undefined`
+* default is `[]`
 
 #### `saveExact`
 
