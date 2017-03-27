@@ -36,6 +36,7 @@ Options
   -p, --production      Skip devDependencies.
   -i, --ignore          Ignore dependencies based on succeeding glob.
   -E, --save-exact      Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.
+  --ignore-dirs         Ignore paths - directory names to ignore.
   --no-color            Force or disable color output.
   --no-emoji            Remove emoji support. No emoji in default in CI environments.
   --debug               Debug output. Throw in a gist when creating issues on github.
@@ -101,6 +102,12 @@ This option will let it ignore outdated and unused checks for packages listed as
 Ignore dependencies that match specified glob.
 
 `$ npm-check -i babel-*` will ignore all dependencies starting with 'babel-'.
+
+#### `--ignore-dirs`
+
+Ignore paths from scanning.
+
+`$ npm-check --ignore-dirs css --ignore-dirs templates` will ignore all folders and sub folders with mentioned base names.
 
 ### `-E, --save-exact`
 
