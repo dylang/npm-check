@@ -33,6 +33,7 @@ Options
   -u, --update          Interactive update.
   -g, --global          Look at global modules.
   -s, --skip-unused     Skip check for unused packages.
+  -r, --remove-unused   Automatically remove unused dependencies.
   -p, --production      Skip devDependencies.
   -i, --ignore          Ignore dependencies based on succeeding glob.
   -E, --save-exact      Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.
@@ -89,6 +90,14 @@ in your code.
 This option will skip that check.
 
 This is enabled by default when using `global` or `update`.
+
+### `-r, --remove-unused`
+
+You can automatically remove all unused dependencies that `npm-check` marked as unused. You must also
+be worried about false positive tests, so it's highly recommended to make a backup of your `package.json`
+before running `npm-check` with this option.
+
+This option is disabled by default.
 
 ### `-p, --production`
 
