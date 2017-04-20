@@ -92,7 +92,7 @@ This is enabled by default when using `global` or `update`.
 
 ### `-p, --production`
 
-By default `npm-check` will look at packages listed as `dependencies` and `devDependencies`.
+By default `npm-check` will look at packages listed as `dependencies`, `peerDependencies` and `devDependencies`.
 
 This option will let it ignore outdated and unused checks for packages listed as `devDependencies`.
 
@@ -106,7 +106,7 @@ Ignore dependencies that match specified glob.
 
 Install packages using `--save-exact`, meaning exact versions will be saved in package.json.
 
-Applies to both `dependencies` and `devDependencies`.
+Applies to `dependencies`, `peerDependencies` and `devDependencies`.
 
 ### `--color, --no-color`
 

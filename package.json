@@ -1,6 +1,6 @@
 {
   "name": "npm-check",
-  "version": "5.4.0",
+  "version": "5.5.0",
   "description": "Check for outdated, incorrect, and unused dependencies.",
   "main": "lib",
   "engines": {
@@ -50,7 +50,8 @@
     "updating",
     "updater",
     "installer",
-    "devDependencies"
+    "devDependencies",
+    "peerDependencies"
   ],
   "author": {
     "name": "Dylan Greene",

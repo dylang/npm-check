@@ -61,7 +61,7 @@ Options
   -g, --global          Look at global modules.
   -s, --skip-unused     Skip check for unused packages.
   -p, --production      Skip devDependencies.
-  -d, --dev-only        Look at devDependencies only (skip dependencies).
+  -d, --dev-only        Look at devDependencies only (skip dependencies and peerDependencies).
   -i, --ignore          Ignore dependencies based on succeeding glob.
   -E, --save-exact      Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.
   --specials            List of depcheck specials to include in check for unused dependencies.
@@ -121,13 +121,13 @@ This is enabled by default when using `global` or `update`.
 
 #### `-p, --production`
 
-By default `npm-check` will look at packages listed as `dependencies` and `devDependencies`.
+By default `npm-check` will look at packages listed as `dependencies`, `peerDependencies` and `devDependencies`.
 
 This option will let it ignore outdated and unused checks for packages listed as `devDependencies`.
 
 #### `-d, --dev-only`
 
-Ignore `dependencies` and only check `devDependencies`.
+Ignore `dependencies` and `peerDependencies` and only check `devDependencies`.
 
 This option will let it ignore outdated and unused checks for packages listed as `dependencies`.
 
@@ -141,7 +141,7 @@ Ignore dependencies that match specified glob.
 
 Install packages using `--save-exact`, meaning exact versions will be saved in package.json.
 
-Applies to both `dependencies` and `devDependencies`.
+Applies to `dependencies`, `peerDependencies` and `devDependencies`.
 
 #### `--specials`
 
@@ -203,7 +203,7 @@ npmCheck(options)
 
 ### `devOnly`
 
-* Ignore `dependencies` and only check `devDependencies`.
+* Ignore `dependencies` and `peerDependencies` and only check `devDependencies`.
 * default is `false`
 
 #### `cwd`
