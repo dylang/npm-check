@@ -64,6 +64,7 @@ Options
   -d, --dev-only        Look at devDependencies only (skip dependencies).
   -i, --ignore          Ignore dependencies based on succeeding glob.
   -E, --save-exact      Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.
+  --specials            List of depcheck specials to include in check for unused dependencies.
   --no-color            Force or disable color output.
   --no-emoji            Remove emoji support. No emoji in default in CI environments.
   --debug               Debug output. Throw in a gist when creating issues on github.
@@ -142,6 +143,14 @@ Install packages using `--save-exact`, meaning exact versions will be saved in p
 
 Applies to both `dependencies` and `devDependencies`.
 
+#### `--specials`
+
+Check special (e.g. config) files when looking for unused dependencies.
+
+`$ npm-check --specials=bin,webpack` will look in the `scripts` section of package.json and in webpack config.
+
+See [https://github.com/depcheck/depcheck#special](https://github.com/depcheck/depcheck#special) for more information.
+
 #### `--color, --no-color`
 
 Enable or disable color support.
@@ -207,6 +216,10 @@ npmCheck(options)
 * Update package.json with exact version `x.y.z`  instead of semver range `^x.y.z`.
 * default is `false`
 
+#### `specials`
+
+* List of [`depcheck`](https://github.com/depcheck/depcheck) special parsers to include.
+* default is `''`
 
 #### `currentState`
 
