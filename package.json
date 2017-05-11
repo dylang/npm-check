@@ -85,6 +85,7 @@
     "package-json": "^4.0.1",
     "path-exists": "^2.1.0",
     "pkg-dir": "^1.0.0",
+    "registry-auth-token": "^3.3.1",
     "semver": "^5.0.1",
     "semver-diff": "^2.0.0",
     "text-table": "^0.2.0",
