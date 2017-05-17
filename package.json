@@ -1,6 +1,6 @@
 {
   "name": "npm-check",
-  "version": "5.4.0",
+  "version": "5.4.4",
   "description": "Check for outdated, incorrect, and unused dependencies.",
   "main": "lib",
   "engines": {
@@ -82,14 +82,14 @@
     "minimatch": "^3.0.2",
     "node-emoji": "^1.0.3",
     "ora": "^0.2.1",
-    "package-json": "^2.0.1",
+    "package-json": "^4.0.1",
     "path-exists": "^2.1.0",
     "pkg-dir": "^1.0.0",
     "semver": "^5.0.1",
     "semver-diff": "^2.0.0",
     "text-table": "^0.2.0",
     "throat": "^2.0.2",
-    "update-notifier": "^0.6.3"
+    "update-notifier": "^2.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
