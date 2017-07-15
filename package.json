@@ -1,6 +1,6 @@
 {
   "name": "npm-check",
-  "version": "5.4.4",
+  "version": "5.4.5",
   "description": "Check for outdated, incorrect, and unused dependencies.",
   "main": "lib",
   "engines": {
