@@ -108,6 +108,8 @@ NPM_CHECK_INSTALLER=echo npm-check -u
 
 Check the versions of your globally installed packages.
 
+If the value of `process.env.NODE_PATH` is set, it will override the default path of global node_modules returned by package [`global-modules`](https://www.npmjs.com/package/global-modules).
+
 _Tip: Use `npm-check -u -g` to do a safe interactive update of global modules, including npm itself._
 
 #### `-s, --skip-unused`
