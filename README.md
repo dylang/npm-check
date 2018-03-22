@@ -58,6 +58,7 @@ Path
 
 Options
   -u, --update          Interactive update.
+  -y, --udpate-all      Uninteractive update. Apply all updates without prompting.
   -g, --global          Look at global modules.
   -s, --skip-unused     Skip check for unused packages.
   -p, --production      Skip devDependencies.
@@ -103,6 +104,10 @@ You can also use this for dry-run testing:
 ```bash
 NPM_CHECK_INSTALLER=echo npm-check -u
 ```
+
+#### `-y, --update-all`
+
+Updates your dependencies like `--update`, just without any prompt. This is especially useful if you want to automate your dependency updates with `npm-check`.
 
 #### `-g, --global`
 
