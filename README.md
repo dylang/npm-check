@@ -237,7 +237,7 @@ npmCheck(options)
 
 #### `currentState`
 
-The result of the promise is a `currentState` object, look in [state.js](https://github.com/dylang/npm-check/blob/master/lib/util/state.js) to see how it works.
+The result of the promise is a `currentState` object, look in [state.js](lib/state/state.js) to see how it works.
 
 You will probably want `currentState.get('packages')` to get an array of packages and the state of each of them.
 
