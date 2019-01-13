@@ -64,6 +64,7 @@ Options
   -p, --production      Skip devDependencies.
   -d, --dev-only        Look at devDependencies only (skip dependencies).
   -i, --ignore          Ignore dependencies based on succeeding glob.
+  -f, --filter          Filter dependencies based on glob.
   -E, --save-exact      Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.
   --specials            List of depcheck specials to include in check for unused dependencies.
   --no-color            Force or disable color output.
@@ -143,6 +144,12 @@ This option will let it ignore outdated and unused checks for packages listed as
 Ignore dependencies that match specified glob.
 
 `$ npm-check -i babel-*` will ignore all dependencies starting with 'babel-'.
+
+#### `-f, --filter`
+
+Only include dependencies that match specified glob.
+
+`$ npm-check -f babel-*` will only include dependencies starting with 'babel-'.
 
 #### `-E, --save-exact`
 
