@@ -89,6 +89,7 @@
     "semver-diff": "^2.0.0",
     "text-table": "^0.2.0",
     "throat": "^2.0.2",
+    "typescript": "^3.5.3",
     "update-notifier": "^2.1.0",
     "xtend": "^4.0.1"
   },
