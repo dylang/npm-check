@@ -9,11 +9,12 @@
   "types": "./index.d.ts",
   "typings": "./index.d.ts",
   "scripts": {
-    "lint": "xo ./lib/*.js",
+    "lint": "xo ./lib/**/*.js",
+    "lint:fix": "xo ./lib/**/*.js --fix",
     "test": "npm run lint && ./bin/cli.js || echo Exit Status: $?.",
     "transpile": "babel lib --out-dir lib-es5",
     "watch": "babel lib --out-dir lib-es5 --watch",
-    "prepublish": "npm run transpile"
+    "prepare": "npm run transpile"
   },
   "xo": {
     "space": 4,
@@ -22,6 +23,15 @@
         0
       ],
       "global-require": [
+        0
+      ],
+      "no-mixed-operators": [
+        0
+      ],
+      "no-prototype-builtins": [
+        0
+      ],
+      "unicorn/explicit-length-check": [
         0
       ]
     }
@@ -96,6 +106,6 @@
     "babel-cli": "^6.6.5",
     "babel-plugin-transform-runtime": "^6.6.0",
     "babel-preset-es2015": "^6.6.0",
-    "xo": "^0.13.0"
+    "xo": ">= 0.25.3"
   }
 }
