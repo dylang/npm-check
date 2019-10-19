@@ -1,11 +1,12 @@
 environment:
   matrix:
+  - nodejs_version: ''
   - nodejs_version: 7
   - nodejs_version: 6
   - nodejs_version: 4
 
 install:
-  - ps: Install-Product node $env:nodejs_version
+  - ps: if ($env:nodejs_version -like '') { Install-Product node $env:nodejs_version }
   - npm i -g npm@3
   - npm install
   - set CI=true
@@ -13,8 +14,8 @@ install:
 test_script:
   - node --version
   - npm --version
-  - npm run lint
-  - "node lib\\cli.js || ver > null"
+  - ps: if ($env:nodejs_version -like '') { npm run lint }
+  - "node bin/cli.js || ver > null"
   - "echo Exit code: %errorlevel%"
 
 build: off
