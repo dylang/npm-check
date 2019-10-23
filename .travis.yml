@@ -20,5 +20,5 @@ script:
     if [[ $nodever == v12 ]]; then
       npm run test
     else
-      node ./bin/cli.js
+      npm run main
     fi

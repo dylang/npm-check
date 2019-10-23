@@ -11,7 +11,8 @@
   "scripts": {
     "lint": "xo ./lib/**/*.js",
     "lint:fix": "xo ./lib/**/*.js --fix",
-    "test": "npm run lint && ./bin/cli.js || { ev=$?; echo \"Exit status: $ev\">&2; exit \"$ev\"; }",
+    "test": "npm run lint && npm run main",
+    "main": "./bin/cli.js; ev=$?; if (( ev >= 2 )); then echo \"Exit status: $ev\">&2; exit \"$ev\"; fi" ,
     "transpile": "babel lib --out-dir lib-es5",
     "watch": "babel lib --out-dir lib-es5 --watch",
     "prepare": "npm run transpile"

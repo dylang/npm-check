@@ -12,11 +12,13 @@ install:
   - set CI=true
 
 test_script:
+  - ver
   - node --version
   - npm --version
   - ps: if ($env:nodejs_version -like '') { npm run lint }
-  - "node bin/cli.js || ver > null"
-  - "echo Exit code: %errorlevel%"
+  - ps: |
+      node bin/cli.js
+      if ($LASTEXITCODE -ge 2) { Write-Output "Exit status: $LASTEXITCODE"; exit $LASTEXITCODE } else { Write-Output "All good" }
 
 build: off
 shallow_clone: true
