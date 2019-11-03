@@ -69,7 +69,7 @@
     "callsite-record": "^3.0.0",
     "chalk": "^1.1.3",
     "co": "^4.6.0",
-    "depcheck": "^0.6.11",
+    "depcheck": "^0.9.0",
     "execa": "^0.2.2",
     "giturl": "^1.0.0",
     "global-modules": "^1.0.0",
