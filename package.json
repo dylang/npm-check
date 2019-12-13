@@ -12,7 +12,7 @@
     "lint": "xo ./lib/**/*.js",
     "lint:fix": "xo ./lib/**/*.js --fix",
     "test": "npm run lint && npm run main",
-    "main": "./bin/cli.js; ev=$?; if (( ev >= 2 )); then echo \"Exit status: $ev\">&2; exit \"$ev\"; fi" ,
+    "main": "./bin/cli.js; ev=$?; if (( ev >= 2 )); then echo \"Exit status: $ev\">&2; exit \"$ev\"; fi",
     "transpile": "babel lib --out-dir lib-es5",
     "watch": "babel lib --out-dir lib-es5 --watch",
     "prepare": "npm run transpile"
@@ -101,7 +101,8 @@
     "text-table": "^0.2.0",
     "throat": "^2.0.2",
     "update-notifier": "^2.1.0",
-    "xtend": "^4.0.2"
+    "xtend": "^4.0.2",
+    "yarn-global-modules": "^1.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
