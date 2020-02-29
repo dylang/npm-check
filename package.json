@@ -34,6 +34,9 @@
       ],
       "unicorn/explicit-length-check": [
         0
+      ],
+      "node/no-unsupported-features/es-syntax": [
+        0
       ]
     }
   },
