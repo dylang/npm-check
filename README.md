@@ -65,6 +65,7 @@ Options
   -d, --dev-only        Look at devDependencies only (skip dependencies).
   -i, --ignore          Ignore dependencies based on succeeding glob.
   -E, --save-exact      Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.
+  -P, --package-version Use the version in package.json for comparison instead of node_modules
   --specials            List of depcheck specials to include in check for unused dependencies.
   --no-color            Force or disable color output.
   --no-emoji            Remove emoji support. No emoji in default in CI environments.
@@ -149,6 +150,12 @@ Ignore dependencies that match specified glob.
 Install packages using `--save-exact`, meaning exact versions will be saved in package.json.
 
 Applies to both `dependencies` and `devDependencies`.
+
+#### `-P, --package-version`
+
+Compare versions using the package.json defined version instead of what version of the package is installed in node_modules.
+
+This allows you to update the package.json file to the latest version even if the latest version is installed in node_modules (because your package.json range covers the latest version).
 
 #### `--specials`
 
