@@ -12,3 +12,13 @@ node_js:
   - 8
   - 6
   - 4
+
+script:
+  # Avoid linting on older node
+  - |
+    nodever=$(node --version | cut -d. -f1)
+    if [[ $nodever == v12 ]]; then
+      npm run test
+    else
+      npm run main
+    fi
