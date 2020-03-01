@@ -5,6 +5,7 @@ declare module NpmCheck {
     skipUnused?: boolean;
     devOnly?: boolean;
     ignoreDev?: boolean;
+    ignoreDirs?: string;
     cwd?: string;
     saveExact?: boolean;
     currentState?: Object;

@@ -64,6 +64,7 @@ Options
   -p, --production      Skip devDependencies.
   -d, --dev-only        Look at devDependencies only (skip dependencies).
   -i, --ignore          Ignore dependencies based on succeeding glob.
+  -D, --ignore-dirs     Ignore directories as passed into depcheck.
   -E, --save-exact      Save exact version (x.y.z) instead of caret (^x.y.z) in package.json.
   --specials            List of depcheck specials to include in check for unused dependencies.
   --no-color            Force or disable color output.
@@ -144,6 +145,12 @@ Ignore dependencies that match specified glob.
 
 `$ npm-check -i babel-*` will ignore all dependencies starting with 'babel-'.
 
+#### `-D, --ignore-dirs`
+
+Ignore a comma-separated list of directories as passed into depcheck.
+
+`$ npm-check -D "tmp,build"` will avoid searching the 'tmp' and 'build' directories when using depcheck.
+
 #### `-E, --save-exact`
 
 Install packages using `--save-exact`, meaning exact versions will be saved in package.json.
@@ -214,6 +221,11 @@ npmCheck(options)
 
 * Ignore dependencies that match specified glob.
 * default is `[]`
+
+#### `ignoreDirs`
+
+* Ignore comma-separated list of directories as passed into depcheck.
+* default is `['sandbox', 'dist', 'generated', '.generated', 'build', 'fixtures', 'jspm_packages']`
 
 #### `saveExact`
 
