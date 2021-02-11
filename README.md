@@ -25,7 +25,7 @@ npm-check
 * Works with `npm@2` and `npm@3`, as well as newer alternative installers like `ied` and `pnpm`.
 
 ### Requirements
-* Node >= 0.11.
+* Node >= 10.
 
 ### On the command line
 
@@ -266,6 +266,18 @@ Each item in the array will look like the following:
 ```
 
 You will also see this if you use `--debug` on the command line.
+
+### RC File Support
+Additional options can be sent to the depcheck process.  See [depcheck API](https://github.com/depcheck/depcheck#api).  Create a .npmcheckrc{.json,.yml,.js} file and set the depcheck options under depcheck property.
+
+For example, to skip packages for unused check, but still want them in the outdated check (so can't use the --ignore option):
+```
+# .npmcheckrc
+
+depcheck:
+  ignoreMatches: ["replace-in-file","snyk","sonarqube-scanner"]
+
+```
 
 ### Inspiration
 

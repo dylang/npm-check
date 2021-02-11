@@ -1,0 +1,31 @@
+dependencies
+callsite-record v3 -> v4; didn't see any breaking changes identified in doc
+chalk v1 -> v4; fixed stripColor; node >= 10; other breaking changes didn't seem to apply
+depcheck v0 -> v1; didn't see any breaking changes identified in doc
+execa v0 -> v5; node >= 10; other breaking changes didn't seem to apply
+global-modules v1 -> v2; didn't see any breaking changes identified in doc
+globby v4 -> v11; node >= 10; other breaking changes didn't seem to apply
+inquirer v0 - v7; fixed inquirer.prompt call
+is-ci v1 -> v2; didn't see any breaking changes identified in doc
+lodash v4 -> v4
+meow v3 -> v9; fixed options; node >= 10; other breaking changes didn't seem to apply
+node-emoji v1 -> v1
+ora v0 -> v5; node >= 10; other breaking changes didn't seem to apply
+package-json v4 -> v6; node >= 8; other breaking changes didn't seem to apply
+path-exists v2 -> v4; node >= 8; other breaking changes didn't seem to apply
+pkg-dir v1 -> v5; node >= 10; other breaking changes didn't seem to apply
+preferred-pm v1 -> v3; no release/tags found
+rc-config-loader *new*
+semver v5 -> v7; didn't see any breaking changes identified in doc
+semver-diff v2 -> v3; node >= 8; other breaking changes didn't seem to apply
+strip-ansi *new*
+throat v2 -> v6; node > 10; other breaking changes didn't seem to apply
+update-notifier v2 -> v5; node > 10; other breaking changes didn't seem to apply
+xtend v4 -> v4
+
+devDependencies
+babel-cli v6 -> v6
+babel-plugin-transform-object-rest-spread *new*
+babel-plugin-transform-runtime v6 -> v6
+babel-preset-es2015 v6 -> v6
+xo v0 -> v0
