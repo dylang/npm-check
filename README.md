@@ -25,7 +25,7 @@ npm-check
 * Works with `npm@2` and `npm@3`, as well as newer alternative installers like `ied` and `pnpm`.
 
 ### Requirements
-* Node >= 10.
+* Node >= 10.9.0
 
 ### On the command line
 
