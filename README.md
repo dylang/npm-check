@@ -269,7 +269,7 @@ You will also see this if you use `--debug` on the command line.
 
 ### Inspiration
 
-* [npm outdated](https://www.npmjs.com/doc/cli/npm-outdated.html) - awkward output, requires --depth=0 to be grokable.
+* [npm outdated](https://docs.npmjs.com/cli/v7/commands/npm-outdated) - awkward output, requires --depth=0 to be grokable.
 * [david](https://github.com/alanshaw/david) - does not work with private registries.
 * [update-notifier](https://github.com/yeoman/update-notifier) - for single modules, not everything in package.json.
 * [depcheck](https://github.com/depcheck/depcheck) - only part of the puzzle. npm-check uses depcheck.
