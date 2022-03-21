@@ -33,12 +33,12 @@ This is the easiest way to use `npm-check`.
 
 ### Install
 ```bash
-$ npm install -g npm-check
+npm install -g npm-check
 ```
 
 ### Use
 ```bash
-$ npm-check
+npm-check
 ```
 
 <img width="882" alt="npm-check" src="https://cloud.githubusercontent.com/assets/51505/9569919/99c2412a-4f48-11e5-8c65-e9b6530ee991.png">
