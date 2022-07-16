@@ -65,7 +65,7 @@
     "lib-es5"
   ],
   "dependencies": {
-    "callsite-record": "^4.1.3",
+    "callsite-record": "^4.1.4",
     "chalk": "^4.1.0",
     "co": "^4.6.0",
     "depcheck": "^1.3.1",
