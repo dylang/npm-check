@@ -2,7 +2,6 @@ npm-check
 =========
 [![Build Status](https://travis-ci.org/dylang/npm-check.svg?branch=master)](https://travis-ci.org/dylang/npm-check)
 [![NPM version](https://badge.fury.io/js/npm-check.svg)](http://badge.fury.io/js/npm-check)
-[![Dependency Status](https://img.shields.io/david/dylang/npm-check.svg)](https://david-dm.org/dylang/npm-check)
 [![npm](https://img.shields.io/npm/dm/npm-check.svg?maxAge=2592000)]()
 
 > Check for outdated, incorrect, and unused dependencies.

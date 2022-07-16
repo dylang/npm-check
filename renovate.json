@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/renovate",
+  "extends": [
+    "config:base",
+    ":rebaseStalePrs",
+    ":semanticCommits",
+    ":automergeAll",
+    ":maintainLockFilesWeekly",
+    ":prHourlyLimitNone"
+  ],
+  "timezone": "America/New_York",
+  "rangeStrategy": "bump",
+  "schedule": [ "every weekend"],
+  "updateNotScheduled": false,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [ "every weekend" ]
+  }
+}
