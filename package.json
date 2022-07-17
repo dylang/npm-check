@@ -85,7 +85,7 @@
     "pkg-dir": "^5.0.0",
     "preferred-pm": "^3.0.3",
     "rc-config-loader": "^4.0.0",
-    "semver": "^7.3.4",
+    "semver": "^7.3.7",
     "semver-diff": "^3.1.1",
     "strip-ansi": "^6.0.0",
     "text-table": "^0.2.0",
