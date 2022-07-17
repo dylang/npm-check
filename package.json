@@ -77,7 +77,7 @@
     "is-ci": "^2.0.0",
     "lodash": "^4.17.21",
     "meow": "^9.0.0",
-    "minimatch": "^3.0.2",
+    "minimatch": "^3.1.2",
     "node-emoji": "^1.10.0",
     "ora": "^5.3.0",
     "package-json": "^6.5.0",
