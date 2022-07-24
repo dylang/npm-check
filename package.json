@@ -82,7 +82,7 @@
     "ora": "^6.1.2",
     "package-json": "^8.1.0",
     "path-exists": "^5.0.0",
-    "pkg-dir": "^5.0.0",
+    "pkg-dir": "^6.0.1",
     "preferred-pm": "^3.0.3",
     "rc-config-loader": "^4.1.0",
     "semver": "^7.3.7",
