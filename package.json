@@ -84,7 +84,7 @@
     "path-exists": "^5.0.0",
     "pkg-dir": "^7.0.0",
     "preferred-pm": "^3.0.3",
-    "rc-config-loader": "^4.1.0",
+    "rc-config-loader": "^4.1.1",
     "semver": "^7.3.8",
     "semver-diff": "^4.0.0",
     "strip-ansi": "^7.0.1",
