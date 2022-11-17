@@ -10,7 +10,7 @@
   "types": "./index.d.ts",
   "typings": "./index.d.ts",
   "scripts": {
-    "lint": "xo ./lib/*.js",
+    "lint": "xo ./lib/**/*.js",
     "test": "npm run lint && ./bin/cli.js || echo Exit Status: $?."
   },
   "xo": {
@@ -21,6 +21,24 @@
       ],
       "global-require": [
         0
+      ],
+      "unicorn/no-array-callback-reference": [
+        0
+      ],
+      "promise/prefer-await-to-then": [
+        1
+      ],
+      "no-unused-expressions": [
+        1
+      ],
+      "unicorn/no-array-reduce" : [
+        1
+      ],
+      "no-prototype-builtins" : [
+        1
+      ],
+      "no-promise-executor-return" : [
+        1
       ]
     }
   },
