@@ -1,0 +1,29 @@
+{
+  "space": 4,
+  "rules": {
+    "no-warning-comments": [
+      0
+    ],
+    "global-require": [
+      0
+    ],
+    "unicorn/no-array-callback-reference": [
+      0
+    ],
+    "promise/prefer-await-to-then": [
+      1
+    ],
+    "no-unused-expressions": [
+      1
+    ],
+    "unicorn/no-array-reduce" : [
+      1
+    ],
+    "no-prototype-builtins" : [
+      1
+    ],
+    "no-promise-executor-return" : [
+      1
+    ]
+  }
+}
