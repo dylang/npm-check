@@ -11,7 +11,7 @@
   "typings": "./index.d.ts",
   "scripts": {
     "lint": "xo ./lib/**/*.js",
-    "test": "npm run lint && ./bin/cli.js || echo Exit Status: $?."
+    "test": "npm run lint && ava && ./bin/cli.js || echo Exit Status: $?."
   },
   "bin": {
     "npm-check": "bin/cli.js"
@@ -80,6 +80,7 @@
     "xtend": "^4.0.2"
   },
   "devDependencies": {
+    "ava": "^5.1.0",
     "xo": "^0.37.1"
   }
 }
