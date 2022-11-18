@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-'use strict';
-
 import meow from "meow";
 
 import detectPreferredPM from "preferred-pm";
