@@ -1,30 +1,17 @@
 {
   "name": "npm-check",
   "version": "6.0.1",
+  "type": "module",
   "description": "Check for outdated, incorrect, and unused dependencies.",
-  "main": "lib",
+  "exports": "./lib/index.js",
   "engines": {
-    "node": ">=v18.12.1"
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
   "types": "./index.d.ts",
   "typings": "./index.d.ts",
   "scripts": {
-    "lint": "xo ./lib/*.js",
-    "test": "npm run lint && ./bin/cli.js || echo Exit Status: $?.",
-    "transpile": "babel lib --out-dir lib-es5",
-    "watch": "babel lib --out-dir lib-es5 --watch",
-    "prepublish": "npm run transpile"
-  },
-  "xo": {
-    "space": 4,
-    "rules": {
-      "no-warning-comments": [
-        0
-      ],
-      "global-require": [
-        0
-      ]
-    }
+    "lint": "xo ./lib/**/*.js",
+    "test": "npm run lint && ava && ./bin/cli.js || echo Exit Status: $?."
   },
   "bin": {
     "npm-check": "bin/cli.js"
@@ -61,8 +48,7 @@
   "homepage": "https://github.com/dylang/npm-check",
   "files": [
     "bin",
-    "lib",
-    "lib-es5"
+    "lib"
   ],
   "dependencies": {
     "callsite-record": "^4.1.4",
@@ -94,11 +80,7 @@
     "xtend": "^4.0.2"
   },
   "devDependencies": {
-    "babel-runtime": "^6.26.0",
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1",
+    "ava": "^5.1.0",
     "xo": "^0.37.1"
   }
 }
