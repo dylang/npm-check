@@ -8,12 +8,11 @@
     ":maintainLockFilesWeekly",
     ":prHourlyLimitNone"
   ],
-  "timezone": "America/New_York",
   "rangeStrategy": "bump",
-  "schedule": [ "every weekend"],
+  "schedule": [ "every monday"],
   "updateNotScheduled": false,
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": [ "every weekend" ]
+    "schedule": [ "every monday" ]
   }
 }
