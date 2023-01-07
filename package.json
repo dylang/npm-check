@@ -89,7 +89,7 @@
     "semver-diff": "^4.0.0",
     "strip-ansi": "^7.0.1",
     "text-table": "^0.2.0",
-    "throat": "^6.0.1",
+    "throat": "^6.0.2",
     "update-notifier": "^6.0.2",
     "xtend": "^4.0.2"
   },
