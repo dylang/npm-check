@@ -69,7 +69,7 @@
     "chalk": "^5.2.0",
     "co": "^4.6.0",
     "depcheck": "^1.4.3",
-    "execa": "^7.1.0",
+    "execa": "^7.1.1",
     "giturl": "^1.0.1",
     "global-modules": "^2.0.0",
     "globby": "^13.1.3",
