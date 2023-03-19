@@ -79,7 +79,7 @@
     "meow": "^11.0.0",
     "minimatch": "^7.4.2",
     "node-emoji": "^1.11.0",
-    "ora": "^6.1.2",
+    "ora": "^6.2.0",
     "package-json": "^8.1.0",
     "path-exists": "^5.0.0",
     "pkg-dir": "^7.0.0",
