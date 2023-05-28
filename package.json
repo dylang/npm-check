@@ -87,7 +87,7 @@
     "rc-config-loader": "^4.1.2",
     "semver": "^7.5.1",
     "semver-diff": "^4.0.0",
-    "strip-ansi": "^7.0.1",
+    "strip-ansi": "^7.1.0",
     "text-table": "^0.2.0",
     "throat": "^6.0.2",
     "update-notifier": "^6.0.2",
