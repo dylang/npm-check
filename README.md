@@ -39,6 +39,7 @@ npm install -g npm-check
 ```bash
 npm-check
 ```
+In Windows, use cmd or powershell CLIs
 
 <img width="882" alt="npm-check" src="https://cloud.githubusercontent.com/assets/51505/9569919/99c2412a-4f48-11e5-8c65-e9b6530ee991.png">
 
