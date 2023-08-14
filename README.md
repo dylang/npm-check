@@ -1,5 +1,5 @@
-npm-check
-=========
+# npm-check
+
 [![Build Status](https://travis-ci.org/dylang/npm-check.svg?branch=master)](https://travis-ci.org/dylang/npm-check)
 [![NPM version](https://badge.fury.io/js/npm-check.svg)](http://badge.fury.io/js/npm-check)
 [![npm](https://img.shields.io/npm/dm/npm-check.svg?maxAge=2592000)]()
@@ -10,32 +10,35 @@ npm-check
 
 ### Features
 
-* Tells you what's out of date.
-* Provides a link to the package's documentation so you can decide if you want the update.
-* Kindly informs you if a dependency is not being used in your code.
-* Works on your globally installed packages too, via `-g`.
-* **Interactive Update** for less typing and fewer typos, via `-u`.
-* Supports public and private [@scoped/packages](https://docs.npmjs.com/getting-started/scoped-packages).
-* Supports ES6-style [`import from`](http://exploringjs.com/es6/ch_modules.html) syntax.
-* Upgrades your modules using your installed version of npm, including the new `npm@3`, so dependencies go where you expect them.
-* Works with any public npm registry, [private registries](https://www.npmjs.com/enterprise), and alternate registries like [Sinopia](https://github.com/rlidwka/sinopia).
-* Does not query registries for packages with `private: true` in their package.json.
-* Emoji in a command-line app, because command-line apps can be fun too.
-* Works with `npm@2` and `npm@3`, as well as newer alternative installers like `ied` and `pnpm`.
+- Tells you what's out of date.
+- Provides a link to the package's documentation so you can decide if you want the update.
+- Kindly informs you if a dependency is not being used in your code.
+- Works on your globally installed packages too, via `-g`.
+- **Interactive Update** for less typing and fewer typos, via `-u`.
+- Supports public and private [@scoped/packages](https://docs.npmjs.com/getting-started/scoped-packages).
+- Supports ES6-style [`import from`](http://exploringjs.com/es6/ch_modules.html) syntax.
+- Upgrades your modules using your installed version of npm, including the new `npm@3`, so dependencies go where you expect them.
+- Works with any public npm registry, [private registries](https://www.npmjs.com/enterprise), and alternate registries like [Sinopia](https://github.com/rlidwka/sinopia).
+- Does not query registries for packages with `private: true` in their package.json.
+- Emoji in a command-line app, because command-line apps can be fun too.
+- Works with `npm@2` and `npm@3`, as well as newer alternative installers like `ied` and `pnpm`.
 
 ### Requirements
-* Node >= 10.9.0
+
+- Node >= 10.9.0
 
 ### On the command line
 
 This is the easiest way to use `npm-check`.
 
 ### Install
+
 ```bash
 npm install -g npm-check
 ```
 
 ### Use
+
 ```bash
 npm-check
 ```
@@ -178,61 +181,62 @@ The API is here in case you want to wrap this with your CI toolset.
 ```js
 const npmCheck = require('npm-check');
 
-npmCheck(options)
-  .then(currentState => console.log(currentState.get('packages')));
+npmCheck(options).then(currentState =>
+  console.log(currentState.get('packages'))
+);
 ```
 
 #### `update`
 
-* Interactive update.
-* default is `false`
+- Interactive update.
+- default is `false`
 
 #### `global`
 
-* Check global modules.
-* default is `false`
-* `cwd` is automatically set with this option.
+- Check global modules.
+- default is `false`
+- `cwd` is automatically set with this option.
 
 #### `skipUnused`
 
-* Skip checking for unused packages.
-* default is `false`
+- Skip checking for unused packages.
+- default is `false`
 
 #### `ignoreDev`
 
-* Ignore `devDependencies`.
-* This is called `--production` on the command line to match `npm`.
-* default is `false`
+- Ignore `devDependencies`.
+- This is called `--production` on the command line to match `npm`.
+- default is `false`
 
 #### `devOnly`
 
-* Ignore `dependencies` and only check `devDependencies`.
-* default is `false`
+- Ignore `dependencies` and only check `devDependencies`.
+- default is `false`
 
 #### `ignore`
 
-* Ignore dependencies that match specified glob.
-* default is `[]`
+- Ignore dependencies that match specified glob.
+- default is `[]`
 
 #### `saveExact`
 
-* Update package.json with exact version `x.y.z`  instead of semver range `^x.y.z`.
-* default is `false`
+- Update package.json with exact version `x.y.z` instead of semver range `^x.y.z`.
+- default is `false`
 
 #### `debug`
 
-* Show debug output. Throw in a gist when creating issues on github.
-* default is `false`
+- Show debug output. Throw in a gist when creating issues on github.
+- default is `false`
 
 #### `cwd`
 
-* Override where `npm-check` checks.
-* default is `process.cwd()`
+- Override where `npm-check` checks.
+- default is `process.cwd()`
 
 #### `specials`
 
-* List of [`depcheck`](https://github.com/depcheck/depcheck) special parsers to include.
-* default is `''`
+- List of [`depcheck`](https://github.com/depcheck/depcheck) special parsers to include.
+- default is `''`
 
 #### `currentState`
 
@@ -267,9 +271,11 @@ Each item in the array will look like the following:
 You will also see this if you use `--debug` on the command line.
 
 ### RC File Support
-Additional options can be sent to the depcheck process.  See [depcheck API](https://github.com/depcheck/depcheck#api).  Create a .npmcheckrc{.json,.yml,.js} file and set the depcheck options under depcheck property.
+
+Additional options can be sent to the depcheck process. See [depcheck API](https://github.com/depcheck/depcheck#api). Create a .npmcheckrc{.json,.yml,.js} file and set the depcheck options under depcheck property.
 
 For example, to skip packages for unused check, but still want them in the outdated check (so can't use the --ignore option):
+
 ```
 # .npmcheckrc
 
@@ -280,10 +286,10 @@ depcheck:
 
 ### Inspiration
 
-* [npm outdated](https://docs.npmjs.com/cli/v7/commands/npm-outdated) - awkward output, requires --depth=0 to be grokable.
-* [david](https://github.com/alanshaw/david) - does not work with private registries.
-* [update-notifier](https://github.com/yeoman/update-notifier) - for single modules, not everything in package.json.
-* [depcheck](https://github.com/depcheck/depcheck) - only part of the puzzle. npm-check uses depcheck.
+- [npm outdated](https://docs.npmjs.com/cli/v7/commands/npm-outdated) - awkward output, requires --depth=0 to be grokable.
+- [david](https://github.com/alanshaw/david) - does not work with private registries.
+- [update-notifier](https://github.com/yeoman/update-notifier) - for single modules, not everything in package.json.
+- [depcheck](https://github.com/depcheck/depcheck) - only part of the puzzle. npm-check uses depcheck.
 
 ### About the Author
 
@@ -292,23 +298,24 @@ to the open source community. I'm also a tech lead at [Opower](https://opower.co
 
 Here's some of my other Node projects:
 
-| Name | Description | npm&nbsp;Downloads |
-|---|---|---|
-| [`grunt‑notify`](https://github.com/dylang/grunt-notify) | Automatic desktop notifications for Grunt errors and warnings. Supports OS X, Windows, Linux. | [![grunt-notify](https://img.shields.io/npm/dm/grunt-notify.svg?style=flat-square)](https://www.npmjs.org/package/grunt-notify) |
-| [`shortid`](https://github.com/dylang/shortid) | Amazingly short non-sequential url-friendly unique id generator. | [![shortid](https://img.shields.io/npm/dm/shortid.svg?style=flat-square)](https://www.npmjs.org/package/shortid) |
-| [`space‑hogs`](https://github.com/dylang/space-hogs) | Discover surprisingly large directories from the command line. | [![space-hogs](https://img.shields.io/npm/dm/space-hogs.svg?style=flat-square)](https://www.npmjs.org/package/space-hogs) |
-| [`rss`](https://github.com/dylang/node-rss) | RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS. | [![rss](https://img.shields.io/npm/dm/rss.svg?style=flat-square)](https://www.npmjs.org/package/rss) |
-| [`grunt‑prompt`](https://github.com/dylang/grunt-prompt) | Interactive prompt for your Grunt config using console checkboxes, text input with filtering, password fields. | [![grunt-prompt](https://img.shields.io/npm/dm/grunt-prompt.svg?style=flat-square)](https://www.npmjs.org/package/grunt-prompt) |
-| [`xml`](https://github.com/dylang/node-xml) | Fast and simple xml generator. Supports attributes, CDATA, etc. Includes tests and examples. | [![xml](https://img.shields.io/npm/dm/xml.svg?style=flat-square)](https://www.npmjs.org/package/xml) |
-| [`changelog`](https://github.com/dylang/changelog) | Command line tool (and Node module) that generates a changelog in color output, markdown, or json for modules in npmjs.org's registry as well as any public github.com repo. | [![changelog](https://img.shields.io/npm/dm/changelog.svg?style=flat-square)](https://www.npmjs.org/package/changelog) |
-| [`grunt‑attention`](https://github.com/dylang/grunt-attention) | Display attention-grabbing messages in the terminal | [![grunt-attention](https://img.shields.io/npm/dm/grunt-attention.svg?style=flat-square)](https://www.npmjs.org/package/grunt-attention) |
-| [`observatory`](https://github.com/dylang/observatory) | Beautiful UI for showing tasks running on the command line. | [![observatory](https://img.shields.io/npm/dm/observatory.svg?style=flat-square)](https://www.npmjs.org/package/observatory) |
-| [`anthology`](https://github.com/dylang/anthology) | Module information and stats for any @npmjs user | [![anthology](https://img.shields.io/npm/dm/anthology.svg?style=flat-square)](https://www.npmjs.org/package/anthology) |
-| [`grunt‑cat`](https://github.com/dylang/grunt-cat) | Echo a file to the terminal. Works with text, figlets, ascii art, and full-color ansi. | [![grunt-cat](https://img.shields.io/npm/dm/grunt-cat.svg?style=flat-square)](https://www.npmjs.org/package/grunt-cat) |
+| Name                                                           | Description                                                                                                                                                                  | npm&nbsp;Downloads                                                                                                                       |
+| -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [`grunt‑notify`](https://github.com/dylang/grunt-notify)       | Automatic desktop notifications for Grunt errors and warnings. Supports OS X, Windows, Linux.                                                                                | [![grunt-notify](https://img.shields.io/npm/dm/grunt-notify.svg?style=flat-square)](https://www.npmjs.org/package/grunt-notify)          |
+| [`shortid`](https://github.com/dylang/shortid)                 | Amazingly short non-sequential url-friendly unique id generator.                                                                                                             | [![shortid](https://img.shields.io/npm/dm/shortid.svg?style=flat-square)](https://www.npmjs.org/package/shortid)                         |
+| [`space‑hogs`](https://github.com/dylang/space-hogs)           | Discover surprisingly large directories from the command line.                                                                                                               | [![space-hogs](https://img.shields.io/npm/dm/space-hogs.svg?style=flat-square)](https://www.npmjs.org/package/space-hogs)                |
+| [`rss`](https://github.com/dylang/node-rss)                    | RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS.                                                                                            | [![rss](https://img.shields.io/npm/dm/rss.svg?style=flat-square)](https://www.npmjs.org/package/rss)                                     |
+| [`grunt‑prompt`](https://github.com/dylang/grunt-prompt)       | Interactive prompt for your Grunt config using console checkboxes, text input with filtering, password fields.                                                               | [![grunt-prompt](https://img.shields.io/npm/dm/grunt-prompt.svg?style=flat-square)](https://www.npmjs.org/package/grunt-prompt)          |
+| [`xml`](https://github.com/dylang/node-xml)                    | Fast and simple xml generator. Supports attributes, CDATA, etc. Includes tests and examples.                                                                                 | [![xml](https://img.shields.io/npm/dm/xml.svg?style=flat-square)](https://www.npmjs.org/package/xml)                                     |
+| [`changelog`](https://github.com/dylang/changelog)             | Command line tool (and Node module) that generates a changelog in color output, markdown, or json for modules in npmjs.org's registry as well as any public github.com repo. | [![changelog](https://img.shields.io/npm/dm/changelog.svg?style=flat-square)](https://www.npmjs.org/package/changelog)                   |
+| [`grunt‑attention`](https://github.com/dylang/grunt-attention) | Display attention-grabbing messages in the terminal                                                                                                                          | [![grunt-attention](https://img.shields.io/npm/dm/grunt-attention.svg?style=flat-square)](https://www.npmjs.org/package/grunt-attention) |
+| [`observatory`](https://github.com/dylang/observatory)         | Beautiful UI for showing tasks running on the command line.                                                                                                                  | [![observatory](https://img.shields.io/npm/dm/observatory.svg?style=flat-square)](https://www.npmjs.org/package/observatory)             |
+| [`anthology`](https://github.com/dylang/anthology)             | Module information and stats for any @npmjs user                                                                                                                             | [![anthology](https://img.shields.io/npm/dm/anthology.svg?style=flat-square)](https://www.npmjs.org/package/anthology)                   |
+| [`grunt‑cat`](https://github.com/dylang/grunt-cat)             | Echo a file to the terminal. Works with text, figlets, ascii art, and full-color ansi.                                                                                       | [![grunt-cat](https://img.shields.io/npm/dm/grunt-cat.svg?style=flat-square)](https://www.npmjs.org/package/grunt-cat)                   |
 
 _This list was generated using [anthology](https://github.com/dylang/anthology)._
 
 ### License
+
 Copyright (c) 2016 Dylan Greene, contributors.
 
 Released under the [MIT license](https://tldrlegal.com/license/mit-license).
