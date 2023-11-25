@@ -78,7 +78,7 @@
     "lodash": "^4.17.21",
     "meow": "^12.1.1",
     "minimatch": "^9.0.3",
-    "node-emoji": "^2.1.1",
+    "node-emoji": "^2.1.3",
     "ora": "^7.0.1",
     "package-json": "^8.1.1",
     "path-exists": "^5.0.0",
