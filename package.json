@@ -90,7 +90,7 @@
     "strip-ansi": "^7.1.0",
     "text-table": "^0.2.0",
     "throat": "^6.0.2",
-    "update-notifier": "^7.2.0",
+    "update-notifier": "^7.3.0",
     "xtend": "^4.0.2"
   },
   "devDependencies": {
