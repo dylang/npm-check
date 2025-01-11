@@ -4,7 +4,7 @@
   "description": "Check for outdated, incorrect, and unused dependencies.",
   "main": "lib",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.13.0"
   },
   "types": "./index.d.ts",
   "typings": "./index.d.ts",
