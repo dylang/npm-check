@@ -149,6 +149,7 @@ Install packages using `--save-exact`, meaning exact versions will be saved in p
 
 Applies to both `dependencies` and `devDependencies`.
 
+
 #### `--specials`
 
 Check special (e.g. config) files when looking for unused dependencies.
@@ -166,6 +167,10 @@ By default `npm-check` uses colors if they are available.
 #### `--emoji, --no-emoji`
 
 Enable or disable emoji support. Useful for terminals that don't support them. Automatically disabled in CI servers.
+
+#### `--lock, --no-lock`
+
+Enable or disable lock file updates. Enabled by default.
 
 #### `--spinner, --no-spinner`
 
