@@ -62,7 +62,8 @@
   "files": [
     "bin",
     "lib",
-    "lib-es5"
+    "lib-es5",
+    "index.d.ts"
   ],
   "dependencies": {
     "callsite-record": "^4.1.5",
