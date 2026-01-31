@@ -73,7 +73,7 @@
     "giturl": "^2.0.0",
     "global-modules": "^2.0.0",
     "globby": "^16.1.0",
-    "inquirer": "^13.2.1",
+    "inquirer": "^13.2.2",
     "is-ci": "^4.1.0",
     "lodash": "^4.17.23",
     "meow": "^14.0.0",
