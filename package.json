@@ -72,7 +72,7 @@
     "execa": "^9.6.1",
     "giturl": "^2.0.0",
     "global-modules": "^2.0.0",
-    "globby": "^16.1.0",
+    "globby": "^16.1.1",
     "inquirer": "^13.2.4",
     "is-ci": "^4.1.0",
     "lodash": "^4.17.23",
