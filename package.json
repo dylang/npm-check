@@ -83,7 +83,7 @@
     "package-json": "^10.0.1",
     "path-exists": "^5.0.0",
     "pkg-dir": "^9.0.0",
-    "preferred-pm": "^4.1.1",
+    "preferred-pm": "^5.0.0",
     "rc-config-loader": "^4.1.4",
     "semver": "^7.7.4",
     "semver-diff": "^5.0.0",
